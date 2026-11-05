@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Angela Kalopisis</title>
+<meta name="description" content="Angela Kalopisis, founder of My Volunteer Pathway. An illustrated map of what I have built since 2020.">
+<meta property="og:title" content="Angela Kalopisis">
+<meta property="og:description" content="Angela Kalopisis, founder of My Volunteer Pathway. An illustrated map of what I have built since 2020.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237A1E2C'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='800' font-size='30' text-anchor='middle' fill='%23F3F0E8'%3EAK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#151515}a:hover{color:#7A1E2C}
+.ul{text-decoration:none;background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .35s ease,color .2s}
+.ul:hover{background-size:100% 1px}
+.ul-on{text-decoration:none;background-image:linear-gradient(currentColor,currentColor);background-size:100% 1px;background-repeat:no-repeat;background-position:0 100%}
+.line{display:block;overflow:hidden;padding:0 .08em .06em}
+.line > span{display:block;animation:up 1s cubic-bezier(.2,.7,.1,1) both}
+@keyframes up{from{transform:translateY(108%)}to{transform:none}}
+.fade{animation:fade .9s cubic-bezier(.2,.7,.1,1) both}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.scene{animation:scene 1.4s cubic-bezier(.2,.7,.1,1) both .35s}
+@keyframes scene{from{opacity:0;clip-path:inset(12% 4% 12% 4% round 8px)}to{opacity:1;clip-path:inset(0 0 0 0 round 8px)}}
+@keyframes hop{0%,55%,100%{transform:translateY(0)}25%{transform:translateY(-14px)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes drift{from{transform:translateX(-40px)}to{transform:translateX(40px)}}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(16px,-10px)}}
+@keyframes wave{0%{opacity:0;transform:scale(.5)}35%{opacity:.9}100%{opacity:0;transform:scale(1.5)}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(21,21,21,.35)}80%,100%{box-shadow:0 0 0 16px rgba(21,21,21,0)}}
+@keyframes slidein{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.caret{display:inline-block;width:2px;height:.9em;background:#151515;margin-left:3px;vertical-align:-0.06em;animation:blink 1s steps(1) infinite}
+.hop{animation:hop 2s cubic-bezier(.3,.6,.3,1) infinite;transform-box:fill-box;transform-origin:50% 100%}
+.bob{animation:bob 2.6s ease-in-out infinite;transform-box:fill-box}
+.drift{animation:drift 18s ease-in-out infinite alternate}
+.float{animation:float 8s ease-in-out infinite}
+.wave{animation:wave 2.8s ease-out infinite;transform-box:fill-box;transform-origin:50% 50%}
+.pin{position:absolute;transform:translate(-50%,-50%);background:none;border:0;padding:0;margin:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;font:inherit;z-index:2}
+.pin-dot{width:34px;height:34px;border-radius:50%;background:#151515;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:14px;box-shadow:0 0 0 3px #FFFFFF,0 6px 14px rgba(21,21,21,.25);transition:transform .25s cubic-bezier(.2,.7,.1,1),background .2s}
+.pin.ring .pin-dot{animation:ping 2s ease-out infinite}
+.pin.seen .pin-dot{background:#FFFFFF;color:#151515}
+.pin.active .pin-dot{background:#7A1E2C;color:#FFFFFF;transform:scale(1.15)}
+.pin:hover .pin-dot{transform:scale(1.12)}
+.pin-main .pin-dot{width:46px;height:46px;font-size:16px;background:#7A1E2C}
+.pin-main.seen .pin-dot{background:#FFFFFF;color:#7A1E2C}
+.pin-tag{display:inline-block;margin-left:6px;padding:2px 6px;border-radius:3px;background:#7A1E2C;color:#FFFFFF;font-size:11px;font-weight:600;letter-spacing:.02em}
+.pin-label{background:rgba(255,255,255,.94);color:#151515;border-radius:4px;padding:5px 9px;font-size:13px;font-weight:500;white-space:nowrap;box-shadow:0 4px 12px rgba(21,21,21,.12);opacity:.92;transition:opacity .2s}
+.pin:hover .pin-label,.pin.active .pin-label{opacity:1}
+.pin:focus-visible{outline:2px solid #7A1E2C;outline-offset:6px;border-radius:8px}
+.panel{animation:slidein .4s cubic-bezier(.2,.7,.1,1) both}
+.row:hover .row-title{color:#7A1E2C}
+.row:hover .row-arrow{transform:translateX(4px)}
+.row-arrow{transition:transform .25s}
+.hero-row{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:flex-end;justify-content:space-between}
+@media (max-width:1240px){.pin-label{font-size:12px;padding:4px 8px}.pin:not(.pin-main):not(.active):not(:hover):not(:focus-visible) .pin-label{display:none}}
+@media (max-width:820px){.facts{grid-template-columns:repeat(2,minmax(0,1fr)) !important;row-gap:16px !important}.pin-label{display:none}.pin-dot{width:28px;height:28px;font-size:12px}.panel{position:static !important;width:auto !important;margin-top:16px}}
+@media (prefers-reduced-motion: reduce){.line > span,.fade,.scene,.hop,.bob,.drift,.float,.wave,.panel,.pin.ring .pin-dot,.caret{animation:none !important}}
+@media (max-width:900px){.tl{grid-template-columns:repeat(2,minmax(0,1fr)) !important;row-gap:28px !important}.tl>div[aria-hidden]{display:none}}
+.proof:hover span:last-child{color:#7A1E2C}
+@media (max-width:700px){.proofs{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+</style>
+
+<style>html{background:#F3F0E8}body{margin:0}*{box-sizing:border-box}</style>
+<script src="/idiomorph.min.js"></script>
+<script src="/runtime.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<template id="tpl">
+
+<div style="width: 100%; background: #F3F0E8; color: #151515; font-family: 'Schibsted Grotesk', sans-serif">
+
+<header style="padding: 0 clamp(20px, 4vw, 56px)">
+<div style="max-width: 1328px; margin: 0 auto; min-height: 76px; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: flex-end; border-bottom: 1px solid #D8D2C4">
+<nav aria-label="Primary" style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 15px">
+<button type="button" onClick="{{ goList }}" class="ul" style="background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer">All work</button>
+<button type="button" onClick="{{ goContact }}" class="ul" style="background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer">Contact</button>
+</nav>
+</div>
+</header>
+
+<section id="explore" style="padding: clamp(40px, 5vw, 72px) clamp(20px, 4vw, 56px) 48px">
+<div style="max-width: 1328px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
+
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px">
+<h1 style="margin: 0; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: clamp(56px, 8.4vw, 124px); line-height: 0.92; letter-spacing: -0.05em; font-weight: 800">
+<span class="line"><span>Angela Kalopisis</span></span>
+</h1>
+<p class="fade" style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 4px 14px; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: clamp(22px, 2.3vw, 32px); line-height: 1.15; min-height: 1.25em; color: #6B675E; font-weight: 500; letter-spacing: -0.02em; animation-delay: .2s"><span>I'm a <span style="color: #151515; font-weight: 700">{{ typed }}</span><span class="caret" aria-hidden="true"></span></span><span style="font-family: 'Schibsted Grotesk', sans-serif; font-size: 15px; color: #6B675E; opacity: {{ yearOpacity }}; transition: opacity .3s; border-left: 1px solid #D8D2C4; padding-left: 14px">{{ roleYear }}</span></p>
+<div class="fade proofs" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px 24px; width: 100%; max-width: 960px; margin-top: 14px; animation-delay: .3s"><button type="button" onClick="{{ pickWings }}" class="proof" style="background: none; border: 0; border-left: 1px solid #D8D2C4; padding: 2px 0 2px 16px; font: inherit; text-align: left; cursor: pointer; color: inherit; display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 0.9; letter-spacing: -0.05em; color: #7A1E2C">2020</span><span style="font-size: 14px; line-height: 1.35; color: #3A3832">Building since, starting with Wings &amp; Water at 11</span></button><button type="button" onClick="{{ pickWings }}" class="proof" style="background: none; border: 0; border-left: 1px solid #D8D2C4; padding: 2px 0 2px 16px; font: inherit; text-align: left; cursor: pointer; color: inherit; display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 0.9; letter-spacing: -0.05em; color: #151515">$22K+</span><span style="font-size: 14px; line-height: 1.35; color: #3A3832">in sales from Wings &amp; Water</span></button><button type="button" onClick="{{ pickMvp }}" class="proof" style="background: none; border: 0; border-left: 1px solid #D8D2C4; padding: 2px 0 2px 16px; font: inherit; text-align: left; cursor: pointer; color: inherit; display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 0.9; letter-spacing: -0.05em; color: #151515">27</span><span style="font-size: 14px; line-height: 1.35; color: #3A3832">organizations on My Volunteer Pathway</span></button><button type="button" onClick="{{ pickLimitless }}" class="proof" style="background: none; border: 0; border-left: 1px solid #D8D2C4; padding: 2px 0 2px 16px; font: inherit; text-align: left; cursor: pointer; color: inherit; display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 0.9; letter-spacing: -0.05em; color: #151515">Top 40</span><span style="font-size: 14px; line-height: 1.35; color: #3A3832">of 3,000+ teams, Diamond Challenge</span></button></div>
+</div>
+
+<div class="fade" style="display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; justify-content: center; margin-bottom: -16px; font-size: 14px; color: #6B675E; animation-delay: .4s">
+<span>Click a pin to explore, or use Next stop to see all nine.</span>
+<span style="display: inline-flex; flex-wrap: wrap; gap: 8px 18px; align-items: center">
+<span style="display: inline-flex; gap: 4px" aria-hidden="true"><sc-for list="{{ dots }}" as="d" hint-placeholder-count="9"><span style="width: 14px; height: 3px; border-radius: 2px; background: {{ d.bg }}"></span></sc-for></span>
+<span style="font-variant-numeric: tabular-nums">{{ count }} of {{ total }} explored</span>
+<button type="button" onClick="{{ goList }}" class="ul-on" style="background: none; border: 0; padding: 0; font: inherit; color: #6B675E; cursor: pointer">Prefer a list?</button>
+</span>
+</div>
+
+<div id="scene" style="position: relative; scroll-margin-top: 24px">
+<div class="scene" style="position: relative; width: 100%; aspect-ratio: 1440 / 760; border-radius: 8px; overflow: hidden; background: #EFE6D8">
+<svg viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustrated town with a ski hill and lodge, a plane, a school, a barn with a silo and rabbits, a community centre, an office tower, a white market tent with a blue table of geometric bird art, a radio tower and a running track" style="position: absolute; inset: 0; width: 100%; height: 100%">
+<rect width="1440" height="760" fill="#EFE6D8"></rect>
+<circle cx="1110" cy="150" r="120" fill="#F4DCC4" opacity=".6"></circle>
+<circle cx="1110" cy="150" r="62" fill="#EFC09A"></circle>
+<g class="drift" fill="#FBF8F2" opacity=".9"><path d="M500 118 h150 a22 22 0 0 0 -30 -26 a34 34 0 0 0 -62 -6 a26 26 0 0 0 -40 18 a18 18 0 0 0 -18 14 Z"></path><path d="M860 86 h110 a18 18 0 0 0 -24 -20 a26 26 0 0 0 -48 -4 a20 20 0 0 0 -38 24 Z"></path></g>
+<path d="M430 262 C 520 200, 610 236, 700 178" fill="none" stroke="#7A1E2C" stroke-width="2" stroke-dasharray="6 8" stroke-linecap="round" opacity=".55"></path>
+<g class="float"><g transform="rotate(-9 764 166)">
+<path d="M722 160 L712 136 L728 136 L744 158 Z" fill="#7A1E2C"></path>
+<path d="M764 160 L750 140 L762 140 L786 160 Z" fill="#D6CFC2"></path>
+<path d="M716 167 C716 160 724 156 736 156 L794 156 C806 156 814 162 814 166 C814 171 806 175 794 175 L736 175 C724 175 716 173 716 167 Z" fill="#FBF8F2"></path>
+<path d="M716 169 L814 169 C812 172 806 175 794 175 L736 175 C724 175 716 173 716 169 Z" fill="#E4DED2"></path>
+<rect x="728" y="166" width="70" height="3" fill="#7A1E2C"></rect>
+<g fill="#AEC1CC"><circle cx="746" cy="162" r="2.2"></circle><circle cx="755" cy="162" r="2.2"></circle><circle cx="764" cy="162" r="2.2"></circle><circle cx="773" cy="162" r="2.2"></circle><circle cx="782" cy="162" r="2.2"></circle><path d="M800 159 L809 163 L800 164 Z"></path></g>
+<path d="M760 170 L742 194 L754 194 L784 171 Z" fill="#E9E4DA"></path>
+</g></g>
+
+<path d="M20 540 L300 150 L580 540 Z" fill="#C9D3D6"></path>
+<path d="M300 150 L580 540 L390 540 Z" fill="#B4C1C6"></path>
+<path d="M300 150 L244 230 L270 216 L298 244 L326 214 L358 236 Z" fill="#FBF8F2"></path>
+<path d="M300 150 L358 236 L330 222 L312 234 Z" fill="#E3E6E4"></path>
+<path d="M296 262 C 258 310, 346 336, 288 386 S 326 456, 276 510" fill="none" stroke="#FBF8F2" stroke-width="9" stroke-linecap="round" opacity=".9"></path>
+<path d="M420 300 C 400 350, 460 390, 430 440" fill="none" stroke="#E3E6E4" stroke-width="7" stroke-linecap="round" opacity=".8"></path>
+<path d="M120 506 L364 232" stroke="#4A3F3A" stroke-width="1.5"></path>
+<g stroke="#4A3F3A" stroke-width="2"><path d="M172 448 V474 M242 369 V395 M312 290 V316"></path><path d="M164 448 H180 M234 369 H250 M304 290 H320" stroke-width="1.5"></path></g>
+<g fill="#7A1E2C"><rect x="196" y="420" width="12" height="9" rx="2"></rect><rect x="264" y="344" width="12" height="9" rx="2"></rect><rect x="334" y="266" width="12" height="9" rx="2"></rect></g>
+<g stroke="#4A3F3A" stroke-width="1"><path d="M202 412 V420 M270 336 V344 M340 258 V266"></path></g>
+<g><path d="M70 470 L84 430 L98 470 Z" fill="#6E8C63"></path><path d="M84 430 L98 470 L84 470 Z" fill="#5C7752"></path><path d="M470 488 L486 444 L502 488 Z" fill="#6E8C63"></path><path d="M486 444 L502 488 L486 488 Z" fill="#5C7752"></path><path d="M500 494 L512 462 L524 494 Z" fill="#6E8C63"></path><path d="M512 462 L524 494 L512 494 Z" fill="#5C7752"></path></g>
+
+<g stroke="#4A3F3A" stroke-width="2" fill="none" stroke-linecap="round"><path d="M1250 172 L1214 440 M1250 172 L1286 440 M1224 372 L1276 372 M1231 302 L1269 302 M1239 236 L1261 236 M1224 372 L1269 302 M1231 302 L1261 236 M1214 440 L1276 372 M1231 302 L1276 372"></path></g>
+<g stroke="#8C7A68" stroke-width="1" opacity=".7"><path d="M1250 200 L1170 420 M1250 200 L1330 420"></path></g>
+<rect x="1240" y="196" width="20" height="8" fill="#7A1E2C"></rect>
+<circle cx="1250" cy="168" r="7" fill="#C2412A"></circle>
+<g fill="none" stroke="#7A1E2C" stroke-width="3" stroke-linecap="round"><path class="wave" d="M1224 144 A 38 38 0 0 1 1276 144"></path><path class="wave" style="animation-delay: 1s" d="M1208 124 A 60 60 0 0 1 1292 124"></path></g>
+
+<path d="M0 470 C 200 404, 380 444, 560 424 S 900 384, 1100 412 S 1350 392, 1440 412 L1440 760 L0 760 Z" fill="#C8D3B4"></path>
+<g fill="#AFC198"><circle cx="640" cy="402" r="10"></circle><circle cx="660" cy="398" r="8"></circle><circle cx="960" cy="396" r="9"></circle><circle cx="1360" cy="398" r="10"></circle><circle cx="1378" cy="402" r="7"></circle><circle cx="880" cy="398" r="8"></circle></g>
+
+<ellipse cx="138" cy="482" rx="56" ry="5" fill="#2B2522" opacity=".1"></ellipse>
+<rect x="100" y="450" width="76" height="32" fill="#8C5A40"></rect>
+<rect x="140" y="450" width="36" height="32" fill="#774A34"></rect>
+<path d="M90 452 L138 418 L186 452 Z" fill="#5E2620"></path>
+<path d="M138 418 L186 452 L138 452 Z" fill="#4A1E19"></path>
+<path d="M90 452 L138 418 L186 452" fill="none" stroke="#FBF8F2" stroke-width="3"></path>
+<rect x="110" y="460" width="16" height="12" fill="#F4DCC4"></rect><rect x="150" y="460" width="16" height="12" fill="#E9C7A6"></rect>
+<rect x="130" y="466" width="14" height="16" fill="#4A1E19"></rect>
+<rect x="160" y="424" width="8" height="14" fill="#6B5446"></rect>
+
+<ellipse cx="1250" cy="434" rx="30" ry="4" fill="#2B2522" opacity=".12"></ellipse>
+<rect x="1232" y="414" width="36" height="20" fill="#E9DCC8"></rect><rect x="1250" y="414" width="18" height="20" fill="#D6C5AC"></rect>
+<path d="M1228 416 L1250 404 L1272 416 Z" fill="#7A1E2C"></path>
+<rect x="1240" y="422" width="8" height="12" fill="#5E2620"></rect>
+
+<ellipse cx="1120" cy="432" rx="60" ry="5" fill="#2B2522" opacity=".1"></ellipse>
+<rect x="1078" y="300" width="84" height="132" fill="#C3D3DC"></rect>
+<rect x="1120" y="300" width="42" height="132" fill="#AEC1CC"></rect>
+<g fill="#E7EEF2" opacity=".85"><rect x="1082" y="306" width="10" height="12"></rect><rect x="1096" y="322" width="10" height="12"></rect><rect x="1082" y="354" width="10" height="12"></rect><rect x="1096" y="386" width="10" height="12"></rect></g>
+<g fill="#9FB3BF"><rect x="1126" y="306" width="10" height="12"></rect><rect x="1140" y="338" width="10" height="12"></rect><rect x="1126" y="370" width="10" height="12"></rect><rect x="1140" y="306" width="10" height="12"></rect></g>
+<g stroke="#9FB3BF" stroke-width="1.2"><path d="M1078 320 H1162 M1078 336 H1162 M1078 352 H1162 M1078 368 H1162 M1078 384 H1162 M1078 400 H1162 M1094 300 V412 M1108 300 V412 M1136 300 V412 M1150 300 V412"></path></g>
+<rect x="1094" y="290" width="52" height="10" fill="#202F5D"></rect>
+<rect x="1104" y="280" width="14" height="10" fill="#8C99A3"></rect>
+<rect x="1096" y="412" width="48" height="20" fill="#202F5D"></rect>
+<path d="M1090 412 H1150 L1146 406 H1094 Z" fill="#152043"></path>
+<rect x="1112" y="418" width="16" height="14" fill="#C3D3DC"></rect>
+
+<path d="M0 560 C 240 504, 460 544, 720 524 S 1180 504, 1440 538 L1440 760 L0 760 Z" fill="#A9BE8F"></path>
+
+<ellipse cx="505" cy="550" rx="86" ry="8" fill="#2B2522" opacity=".1"></ellipse>
+<path d="M548 396 L548 470" stroke="#4A3F3A" stroke-width="2"></path>
+<path d="M548 398 L574 405 L548 412 Z" fill="#C2412A"></path>
+<rect x="440" y="464" width="130" height="84" fill="#EAD9BC"></rect>
+<rect x="505" y="464" width="65" height="84" fill="#DCC8A6"></rect>
+<path d="M430 468 L505 432 L580 468 Z" fill="#7A1E2C"></path>
+<path d="M505 432 L580 468 L505 468 Z" fill="#5E1722"></path>
+<rect x="496" y="414" width="18" height="20" fill="#F3F0E8"></rect>
+<path d="M492 416 L505 404 L518 416 Z" fill="#5E1722"></path>
+<circle cx="505" cy="424" r="4" fill="#C9A43F"></circle>
+<rect x="454" y="476" width="16" height="14" fill="#C3D3DC"></rect><rect x="478" y="476" width="16" height="14" fill="#C3D3DC"></rect><rect x="516" y="476" width="16" height="14" fill="#AEC1CC"></rect><rect x="540" y="476" width="16" height="14" fill="#AEC1CC"></rect>
+<rect x="454" y="500" width="16" height="14" fill="#C3D3DC"></rect><rect x="540" y="500" width="16" height="14" fill="#AEC1CC"></rect>
+<circle cx="505" cy="452" r="7" fill="#F3F0E8"></circle><path d="M505 448 V452 L508 454" stroke="#4A3F3A" stroke-width="1.2" fill="none"></path>
+<rect x="491" y="508" width="28" height="36" fill="#5E1722"></rect>
+<path d="M505 508 V544" stroke="#4A1E19" stroke-width="1.5"></path>
+<rect x="484" y="544" width="42" height="4" fill="#CFC4AE"></rect><rect x="478" y="548" width="54" height="4" fill="#BDB29B"></rect>
+
+<path d="M0 650 C 300 618, 600 658, 900 638 S 1300 628, 1440 648 L1440 760 L0 760 Z" fill="#D5DCC0"></path>
+<path d="M236 522 C 300 566, 186 602, 330 632 S 560 652, 700 602 S 900 568, 1040 618 S 1120 672, 1160 692" fill="none" stroke="#E6CBB6" stroke-width="24" stroke-linecap="round"></path>
+
+<ellipse cx="318" cy="606" rx="112" ry="9" fill="#2B2522" opacity=".1"></ellipse>
+<rect x="222" y="478" width="34" height="126" fill="#C9D3D6"></rect>
+<rect x="240" y="478" width="16" height="126" fill="#B4C1C6"></rect>
+<path d="M222 478 A17 17 0 0 1 256 478 Z" fill="#9FB3BF"></path>
+<g stroke="#A9B6BC" stroke-width="1.5"><path d="M222 504 H256 M222 532 H256 M222 560 H256 M222 588 H256"></path></g>
+<path d="M262 604 L262 488 L284 458 L332 440 L380 458 L402 488 L402 604 Z" fill="#9E3B2E"></path>
+<path d="M332 440 L380 458 L402 488 L402 604 L370 604 L370 470 Z" fill="#83302A" opacity=".55"></path>
+<path d="M262 490 L284 458 L332 440 L380 458 L402 490" fill="none" stroke="#F3F0E8" stroke-width="4" stroke-linejoin="round"></path>
+<rect x="318" y="460" width="28" height="24" fill="#F3F0E8"></rect>
+<path d="M321 463 L343 481 M343 463 L321 481" stroke="#9E3B2E" stroke-width="2.5"></path>
+<rect x="312" y="492" width="40" height="40" rx="2" fill="#F3F0E8"></rect>
+<g fill="#3E8E4F"><ellipse cx="332" cy="505" rx="5.5" ry="7"></ellipse><ellipse cx="332" cy="519" rx="5.5" ry="7"></ellipse><ellipse cx="325" cy="512" rx="7" ry="5.5"></ellipse><ellipse cx="339" cy="512" rx="7" ry="5.5"></ellipse></g>
+<path d="M332 512 Q 336 522 340 526" stroke="#3E8E4F" stroke-width="1.8" fill="none"></path>
+<rect x="306" y="540" width="52" height="64" fill="#F3F0E8"></rect>
+<rect x="310" y="544" width="44" height="56" fill="none" stroke="#9E3B2E" stroke-width="2"></rect>
+<path d="M310 544 L354 600 M354 544 L310 600" stroke="#9E3B2E" stroke-width="3"></path>
+<path d="M262 604 V488 M402 604 V488" stroke="#F3F0E8" stroke-width="3"></path>
+<g><ellipse cx="420" cy="598" rx="16" ry="12" fill="#E2C77E"></ellipse><rect x="404" y="586" width="16" height="24" fill="#E2C77E"></rect><ellipse cx="404" cy="598" rx="6" ry="12" fill="#D3B566"></ellipse><path d="M410 590 H420 M410 598 H420 M410 606 H420" stroke="#C9A85A" stroke-width="1"></path></g>
+<g stroke="#8C7A68" stroke-width="2" fill="none"><path d="M140 612 L212 604 M140 630 L212 622 M150 598 L150 640 M182 594 L182 636 M212 590 L212 632"></path></g>
+<g><rect x="150" y="652" width="34" height="22" fill="#B08A6A"></rect><path d="M146 654 L167 642 L188 654 Z" fill="#8C6A50"></path><rect x="155" y="657" width="24" height="13" fill="#E9DCC8"></rect><path d="M161 657 V670 M167 657 V670 M173 657 V670" stroke="#B08A6A" stroke-width="1"></path></g>
+
+<g class="hop"><ellipse cx="216" cy="676" rx="20" ry="3" fill="#2B2522" opacity=".12"></ellipse><ellipse cx="214" cy="662" rx="17" ry="11" fill="#FBF8F2"></ellipse><circle cx="229" cy="651" r="8.5" fill="#FBF8F2"></circle><ellipse cx="225" cy="636" rx="3.2" ry="10" fill="#FBF8F2"></ellipse><ellipse cx="225" cy="637" rx="1.4" ry="7" fill="#E8B4B8"></ellipse><ellipse cx="234" cy="637" rx="3.2" ry="10" fill="#FBF8F2" transform="rotate(14 234 637)"></ellipse><circle cx="232" cy="650" r="1.4" fill="#2B2522"></circle><circle cx="198" cy="660" r="4" fill="#FBF8F2"></circle></g>
+<g class="hop" style="animation-delay: .7s"><ellipse cx="302" cy="690" rx="20" ry="3" fill="#2B2522" opacity=".12"></ellipse><ellipse cx="300" cy="676" rx="17" ry="11" fill="#C9A47F"></ellipse><circle cx="315" cy="665" r="8.5" fill="#C9A47F"></circle><ellipse cx="311" cy="650" rx="3.2" ry="10" fill="#C9A47F"></ellipse><ellipse cx="311" cy="651" rx="1.4" ry="7" fill="#E8B4B8"></ellipse><ellipse cx="320" cy="651" rx="3.2" ry="10" fill="#C9A47F" transform="rotate(14 320 651)"></ellipse><circle cx="318" cy="664" r="1.4" fill="#2B2522"></circle><circle cx="284" cy="674" r="4" fill="#FBF8F2"></circle></g>
+<g class="hop" style="animation-delay: 1.3s"><ellipse cx="438" cy="678" rx="18" ry="3" fill="#2B2522" opacity=".12"></ellipse><ellipse cx="438" cy="665" rx="15" ry="10" fill="#7E6150"></ellipse><circle cx="424" cy="655" r="7.5" fill="#7E6150"></circle><ellipse cx="428" cy="641" rx="2.8" ry="9" fill="#7E6150"></ellipse><ellipse cx="419" cy="642" rx="2.8" ry="9" fill="#7E6150" transform="rotate(-14 419 642)"></ellipse><circle cx="421" cy="654" r="1.3" fill="#2B2522"></circle><circle cx="453" cy="663" r="3.5" fill="#FBF8F2"></circle></g>
+
+<ellipse cx="720" cy="590" rx="160" ry="10" fill="#2B2522" opacity=".1"></ellipse>
+<rect x="598" y="452" width="244" height="134" fill="#B66A4F"></rect>
+<rect x="772" y="452" width="70" height="134" fill="#9E5843"></rect>
+<g stroke="#A35C45" stroke-width="1" opacity=".55"><path d="M598 476 H772 M598 500 H772 M598 524 H772 M598 548 H772 M598 572 H772"></path></g>
+<g stroke="#8C4D3B" stroke-width="1" opacity=".55"><path d="M772 476 H842 M772 500 H842 M772 524 H842 M772 548 H842 M772 572 H842"></path></g>
+<rect x="590" y="440" width="260" height="14" fill="#7E4334"></rect>
+<path d="M664 442 L720 402 L776 442 Z" fill="#E9DCC8"></path>
+<path d="M720 402 L776 442 L720 442 Z" fill="#D6C5AC"></path>
+<circle cx="720" cy="426" r="8" fill="#C3D3DC"></circle>
+<rect x="640" y="460" width="160" height="24" rx="2" fill="#F3F0E8"></rect>
+<text x="720" y="476.5" text-anchor="middle" font-family="'Schibsted Grotesk', sans-serif" font-weight="600" font-size="11.5" letter-spacing="2.4" fill="#202F5D">COMMUNITY CENTRE</text>
+<rect x="612" y="498" width="42" height="34" fill="#C3D3DC"></rect><rect x="612" y="530" width="42" height="4" fill="#E9DCC8"></rect>
+<rect x="786" y="498" width="42" height="34" fill="#AEC1CC"></rect><rect x="786" y="530" width="42" height="4" fill="#D6C5AC"></rect>
+<path d="M676 504 H764 L774 522 H666 Z" fill="#68A645"></path>
+<path d="M720 504 H764 L774 522 H720 Z" fill="#558B38"></path>
+<rect x="690" y="522" width="60" height="64" fill="#202F5D"></rect>
+<path d="M720 522 V586" stroke="#152043" stroke-width="2"></path>
+<rect x="696" y="530" width="18" height="22" fill="#3B4F86"></rect><rect x="726" y="530" width="18" height="22" fill="#3B4F86"></rect>
+<rect x="664" y="536" width="18" height="24" fill="#E9DCC8"></rect><rect x="667" y="540" width="6" height="5" fill="#E7B9BF"></rect><rect x="674" y="546" width="6" height="7" fill="#C3D3DC"></rect>
+<g><rect x="612" y="566" width="32" height="18" fill="#C9A47F"></rect><rect x="612" y="566" width="32" height="4" fill="#B08A6A"></rect><circle cx="620" cy="564" r="5" fill="#E89A5B"></circle><circle cx="630" cy="563" r="5" fill="#C2412A"></circle><circle cx="639" cy="565" r="4.5" fill="#E89A5B"></circle></g>
+<g><rect x="648" y="568" width="30" height="16" fill="#C9A47F"></rect><rect x="648" y="568" width="30" height="4" fill="#B08A6A"></rect><circle cx="655" cy="566" r="4.5" fill="#8CA673"></circle><circle cx="664" cy="565" r="5" fill="#76905F"></circle><circle cx="672" cy="566" r="4.5" fill="#8CA673"></circle></g>
+<g><rect x="784" y="562" width="28" height="22" fill="#D9B48F"></rect><rect x="814" y="568" width="24" height="16" fill="#CDA680"></rect><rect x="790" y="544" width="24" height="18" fill="#CDA680"></rect><path d="M784 573 H812 M790 553 H814" stroke="#B08A6A" stroke-width="1.5"></path></g>
+<g class="bob"><ellipse cx="578" cy="634" rx="14" ry="2.5" fill="#2B2522" opacity=".12"></ellipse><rect x="567" y="592" width="22" height="40" rx="11" fill="#68A645"></rect><circle cx="578" cy="581" r="9.5" fill="#E8C3A2"></circle><rect x="584" y="604" width="20" height="15" rx="2" fill="#D9B48F"></rect></g>
+<g class="bob" style="animation-delay: .6s"><ellipse cx="647" cy="644" rx="14" ry="2.5" fill="#2B2522" opacity=".12"></ellipse><rect x="636" y="602" width="22" height="40" rx="11" fill="#202F5D"></rect><circle cx="647" cy="591" r="9.5" fill="#8D5B3E"></circle></g>
+<g class="bob" style="animation-delay: 1.2s"><ellipse cx="801" cy="642" rx="14" ry="2.5" fill="#2B2522" opacity=".12"></ellipse><rect x="790" y="600" width="22" height="40" rx="11" fill="#E7B9BF"></rect><circle cx="801" cy="589" r="9.5" fill="#C68E6A"></circle></g>
+<g class="bob" style="animation-delay: 1.8s"><ellipse cx="863" cy="632" rx="14" ry="2.5" fill="#2B2522" opacity=".12"></ellipse><rect x="852" y="590" width="22" height="40" rx="11" fill="#7A1E2C"></rect><circle cx="863" cy="579" r="9.5" fill="#E8C3A2"></circle><rect x="836" y="602" width="20" height="15" rx="2" fill="#D9B48F"></rect></g>
+
+<ellipse cx="1030" cy="616" rx="118" ry="8" fill="#2B2522" opacity=".12"></ellipse>
+<path d="M990 530 V612 M1110 530 V612" stroke="#B5AFA4" stroke-width="3"></path>
+<path d="M972 530 V614 M1128 530 V614" stroke="#9A958B" stroke-width="3.5"></path>
+<path d="M966 520 L1012 486 L1088 486 L1134 520 Z" fill="#FBF8F2"></path>
+<path d="M1050 486 L1088 486 L1134 520 L1050 520 Z" fill="#ECE7DD"></path>
+<path d="M1012 486 L1050 470 L1088 486 Z" fill="#F6F2EA"></path>
+<path d="M1050 470 L1088 486 L1050 486 Z" fill="#E4DED2"></path>
+<rect x="964" y="520" width="172" height="12" fill="#FBF8F2"></rect>
+<rect x="1050" y="520" width="86" height="12" fill="#ECE7DD"></rect>
+<path d="M964 532 H1136" stroke="#D9D2C4" stroke-width="1.5"></path>
+<rect x="980" y="568" width="140" height="9" fill="#7CCBE6"></rect>
+<rect x="980" y="577" width="140" height="38" fill="#4FB3D9"></rect>
+<rect x="1050" y="577" width="70" height="38" fill="#43A0C4"></rect>
+<g stroke="#3D93B6" stroke-width="1.2" opacity=".7"><path d="M996 579 V614 M1018 579 V614 M1040 579 V614 M1066 579 V614 M1090 579 V614 M1108 579 V614"></path></g>
+<g><rect x="990" y="570" width="12" height="7" fill="#FBF8F2"></rect><path d="M993 575 L996 571 L999 575 Z" fill="#C2412A"></path>
+<rect x="1006" y="570" width="12" height="7" fill="#FBF8F2"></rect><path d="M1009 575 L1012 571 L1015 575 Z" fill="#E2B93B"></path><path d="M1012 571 L1015 575 L1013 575 Z" fill="#2B2522"></path>
+<rect x="1064" y="570" width="12" height="7" fill="#FBF8F2"></rect><path d="M1067 575 L1070 571 L1073 575 Z" fill="#5B7FB5"></path><path d="M1070 571 L1073 575 L1070 575 Z" fill="#DCE4EE"></path>
+<rect x="1080" y="570" width="12" height="7" fill="#FBF8F2"></rect><path d="M1083 575 L1086 571 L1089 575 Z" fill="#8C6A55"></path><path d="M1086 571 L1088 573 L1086 575 Z" fill="#2B2522"></path>
+<rect x="1044" y="570" width="16" height="7" fill="#E9C547"></rect><path d="M1047 575 L1052 571 L1057 575 Z" fill="#3E8E4F"></path></g>
+<g><path d="M994 568 V546 M988 546 H1010" stroke="#C9A47F" stroke-width="2"></path><g stroke="#9A958B" stroke-width="1"><path d="M992 546 V553 M998 546 V555 M1004 546 V552 M1008 546 V554"></path></g><path d="M990 553 L994 557 L992 559 Z" fill="#C2412A"></path><circle cx="998" cy="557" r="2.3" fill="#5B7FB5"></circle><path d="M1002 552 L1006 555 L1003 557 Z" fill="#E2B93B"></path><circle cx="1008" cy="556" r="2.3" fill="#E89A5B"></circle></g>
+<g><path d="M1018 568 L1028 538 L1038 568 M1028 538 V568" stroke="#C9A47F" stroke-width="1.6" fill="none"></path>
+<rect x="1014" y="540" width="13" height="13" fill="#2B2522"></rect><rect x="1016" y="542" width="9" height="9" fill="#FBF8F2"></rect><path d="M1017 550 L1020 543 L1024 550 Z" fill="#C2412A"></path><path d="M1020 543 L1024 550 L1021 550 Z" fill="#8E2A22"></path>
+<rect x="1029" y="540" width="13" height="13" fill="#2B2522"></rect><rect x="1031" y="542" width="9" height="9" fill="#FBF8F2"></rect><path d="M1032 550 L1035 543 L1039 550 Z" fill="#5B7FB5"></path><path d="M1035 543 L1039 550 L1036 550 Z" fill="#DCE4EE"></path>
+<rect x="1014" y="555" width="13" height="13" fill="#2B2522"></rect><rect x="1016" y="557" width="9" height="9" fill="#FBF8F2"></rect><path d="M1017 565 L1020 558 L1024 565 Z" fill="#8C6A55"></path><path d="M1019 559 L1021 558 L1021 562 Z" fill="#2B2522"></path>
+<rect x="1029" y="555" width="13" height="13" fill="#2B2522"></rect><rect x="1031" y="557" width="9" height="9" fill="#FBF8F2"></rect><path d="M1032 565 L1035 558 L1039 565 Z" fill="#C97B3F"></path><path d="M1035 558 L1039 565 L1036 565 Z" fill="#A85F2C"></path></g>
+<g><rect x="1046" y="556" width="16" height="12" fill="#2B2522"></rect><path d="M1049 560 H1059 M1049 563 H1056" stroke="#F3F0E8" stroke-width="1"></path></g>
+<g><rect x="1068" y="532" width="44" height="36" fill="#E2C9A2"></rect><rect x="1068" y="549" width="44" height="3" fill="#C9A47F"></rect><rect x="1088" y="532" width="3" height="36" fill="#C9A47F"></rect><rect x="1068" y="532" width="44" height="3" fill="#C9A47F"></rect>
+<rect x="1072" y="538" width="12" height="10" fill="#E7B9BF"></rect><rect x="1094" y="539" width="14" height="9" fill="#7CCBE6"></rect><rect x="1072" y="555" width="13" height="12" fill="#FBF8F2"></rect><path d="M1074 565 L1078 557 L1083 565 Z" fill="#3E8E4F"></path><circle cx="1098" cy="560" r="4" fill="#C2412A"></circle><circle cx="1105" cy="561" r="3.5" fill="#E89A5B"></circle></g>
+<g><path d="M936 568 L948 528 L960 568" stroke="#8C6A50" stroke-width="2" fill="none"></path>
+<rect x="928" y="528" width="40" height="32" fill="#7E7A72"></rect><rect x="930" y="530" width="36" height="28" fill="#FBF8F2"></rect>
+<path d="M934 554 L938 538 L946 538 L948 554 Z" fill="#2B2522"></path><path d="M938 548 L942 554 L946 548 Z" fill="#C97B3F"></path><path d="M934 540 L937 534 L939 541 Z" fill="#2B2522"></path><path d="M945 541 L947 534 L950 540 Z" fill="#2B2522"></path>
+<path d="M952 554 L954 540 L962 540 L963 554 Z" fill="#B5AFA4"></path><path d="M954 540 L955 530 L958 540 Z" fill="#9A958B"></path><path d="M959 540 L961 530 L963 541 Z" fill="#B5AFA4"></path><path d="M955 548 L958 552 L961 548 Z" fill="#FBF8F2"></path></g>
+<g><rect x="924" y="566" width="46" height="44" fill="#7E7A72" transform="rotate(-4 947 588)"></rect><rect x="926" y="568" width="42" height="40" fill="#B79AD6" transform="rotate(-4 947 588)"></rect>
+<path d="M936 584 L944 576 L950 584 Z" fill="#E8903A"></path><path d="M944 576 L952 580 L950 584 Z" fill="#F2B23E"></path><path d="M950 580 L956 583 L950 586 Z" fill="#2B2522"></path><path d="M936 584 L950 584 L946 604 Z" fill="#E07A2E"></path><path d="M950 584 L952 598 L946 604 Z" fill="#C9632A"></path><path d="M940 592 L946 604 L938 602 Z" fill="#3E8E4F"></path><circle cx="946" cy="580" r="1.4" fill="#2B2522"></circle></g>
+
+<ellipse cx="1260" cy="704" rx="162" ry="44" fill="#D9826A"></ellipse>
+<ellipse cx="1260" cy="704" rx="124" ry="27" fill="#A9BE8F"></ellipse>
+<ellipse cx="1260" cy="704" rx="133" ry="31" fill="none" stroke="#F3F0E8" stroke-width="1.2" opacity=".75"></ellipse>
+<ellipse cx="1260" cy="704" rx="143" ry="35" fill="none" stroke="#F3F0E8" stroke-width="1.2" opacity=".75"></ellipse>
+<ellipse cx="1260" cy="704" rx="153" ry="40" fill="none" stroke="#F3F0E8" stroke-width="1.2" opacity=".75"></ellipse>
+<g><rect x="1150" y="632" width="60" height="6" fill="#B5AFA4"></rect><rect x="1156" y="624" width="48" height="6" fill="#C9C3B8"></rect><rect x="1162" y="616" width="36" height="6" fill="#D9D2C4"></rect></g>
+<g class="bob"><rect x="1384" y="674" width="15" height="27" rx="7.5" fill="#FBF8F2"></rect><circle cx="1391.5" cy="666" r="7.5" fill="#E8C3A2"></circle><rect x="1386" y="682" width="11" height="7" fill="#7A1E2C"></rect></g>
+
+<g><rect x="938" y="570" width="5" height="42" fill="#6B5446"></rect><circle cx="940" cy="552" r="25" fill="#8CA673"></circle><path d="M940 527 A25 25 0 0 1 965 552 A25 25 0 0 1 940 577 Z" fill="#76905F"></path></g>
+<g><path d="M1166 530 L1180 488 L1194 530 Z" fill="#6E8C63"></path><path d="M1180 488 L1194 530 L1180 530 Z" fill="#5C7752"></path><rect x="1178" y="530" width="4" height="10" fill="#6B5446"></rect></g>
+<g><rect x="78" y="600" width="5" height="42" fill="#6B5446"></rect><circle cx="80" cy="584" r="23" fill="#8CA673"></circle><path d="M80 561 A23 23 0 0 1 103 584 A23 23 0 0 1 80 607 Z" fill="#76905F"></path></g>
+<g><path d="M30 640 L46 596 L62 640 Z" fill="#6E8C63"></path><path d="M46 596 L62 640 L46 640 Z" fill="#5C7752"></path></g>
+<g><path d="M884 540 L898 500 L912 540 Z" fill="#6E8C63"></path><path d="M898 500 L912 540 L898 540 Z" fill="#5C7752"></path></g>
+</svg>
+<sc-if value="{{ hasSel }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ close }}" aria-label="Close the card" style="position: absolute; inset: 0; z-index: 1; border: 0; padding: 0; background: rgba(21,21,21,.10); cursor: zoom-out"></button></sc-if>
+<sc-for list="{{ stops }}" as="s" hint-placeholder-count="9">
+<button type="button" class="{{ s.cls }}" style="left: {{ s.x }}; top: {{ s.y }}" onClick="{{ s.pick }}" aria-label="Explore {{ s.label }}" aria-pressed="{{ s.active }}"><span class="pin-dot">{{ s.mark }}</span><span class="pin-label">{{ s.label }}<sc-if value="{{ s.main }}" hint-placeholder-val="{{ false }}"><span class="pin-tag">Start here</span></sc-if></span></button>
+</sc-for>
+
+<sc-if value="{{ hasSel }}" hint-placeholder-val="{{ false }}">
+<aside class="panel" aria-live="polite" style="position: absolute; right: 16px; top: 16px; bottom: 16px; width: 420px; background: #FBF9F4; border-radius: 6px; overflow: auto; display: flex; flex-direction: column; z-index: 3; box-shadow: 0 1px 0 rgba(21,21,21,.06), 0 24px 60px rgba(43,37,34,.22)">
+<div style="position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 10px 8px 16px; background: #FBF9F4; border-bottom: 1px solid #E2DDD1">
+<span style="font-size: 13px; color: #6B675E; font-variant-numeric: tabular-nums">{{ cur.num }} of {{ total }}</span>
+<span style="display: flex; gap: 6px">
+<button type="button" onClick="{{ prev }}" aria-label="Previous stop" style="min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid #D8D2C4; background: #FFFFFF; color: #151515; font: inherit; font-size: 14px; cursor: pointer">← Prev</button>
+<button type="button" onClick="{{ close }}" style="min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid #151515; background: #FFFFFF; color: #151515; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Close ✕</button>
+</span>
+</div>
+<div style="position: relative; aspect-ratio: 4 / 3; flex-shrink: 0; background: #E2DDD1; overflow: hidden">
+<sc-if value="{{ cur.hasImg }}" hint-placeholder-val="{{ true }}"><img src="{{ cur.img }}" alt="{{ cur.imgAlt }}" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: {{ cur.imgPos }}"></sc-if>
+<sc-if value="{{ cur.noImg }}" hint-placeholder-val="{{ false }}"><div style="height: 100%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #6B675E">[Photo · {{ cur.label }}]</div></sc-if>
+</div>
+<div style="padding: 22px 26px 26px; display: flex; flex-direction: column; gap: 14px; flex: 1">
+<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: #6B675E"><span>{{ cur.kicker }}</span></div>
+<h2 style="margin: 0; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.05; letter-spacing: -0.03em">{{ cur.title }}</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A3832">{{ cur.body }}</p>
+<sc-if value="{{ cur.hasBody2 }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A3832">{{ cur.body2 }}</p></sc-if>
+<sc-if value="{{ cur.hasBody3 }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A3832">{{ cur.body3 }}</p></sc-if>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; border-top: 1px solid #151515; padding-top: 14px; margin-top: 2px">
+<sc-for list="{{ cur.chips }}" as="c" hint-placeholder-count="3"><div><div style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 30px; line-height: 1">{{ c.v }}</div><div style="font-size: 12px; line-height: 1.35; color: #6B675E; margin-top: 6px">{{ c.l }}</div></div></sc-for>
+</div>
+<div style="display: flex; flex-wrap: nowrap; gap: 16px; align-items: flex-end; justify-content: space-between; margin-top: auto; padding-top: 10px">
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 8px"><a href="{{ cur.href }}" class="ul-on" style="font-size: 15px; font-weight: 500">{{ cur.cta }} →</a><sc-if value="{{ cur.hasCta2 }}" hint-placeholder-val="{{ false }}"><a href="{{ cur.href2 }}" class="ul-on" style="font-size: 15px; font-weight: 500; color: #7A1E2C">{{ cur.cta2 }} {{ cur.arrow2 }}</a></sc-if></span>
+<button type="button" onClick="{{ next }}" style="flex: 0 0 auto; margin-left: auto; white-space: nowrap; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #151515; background: #151515; color: #FBF9F4; font: inherit; font-size: 14px; font-weight: 500; cursor: pointer">Next stop →</button>
+</div>
+</div>
+</aside>
+</sc-if>
+</div>
+</div>
+
+<div class="fade" style="animation-delay: .9s; display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 13px; color: #6B675E">Since 2020</span>
+<div class="tl" style="position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0 20px">
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: #151515"></div>
+<sc-for list="{{ years }}" as="y" hint-placeholder-count="6">
+<div style="position: relative; display: flex; flex-direction: column; gap: 10px; min-width: 0">
+<span aria-hidden="true" style="width: 15px; height: 15px; border-radius: 50%; background: {{ y.dot }}; box-shadow: 0 0 0 4px #F3F0E8"></span>
+<span style="font-weight: 800; font-size: 30px; line-height: 1; letter-spacing: -0.04em; color: {{ y.color }}">{{ y.y }}</span>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{ y.items }}" as="it" hint-placeholder-count="2">
+<sc-if value="{{ it.link }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ it.go }}" class="ul" style="align-self: flex-start; text-align: left; background: none; border: 0; padding: 0; font: inherit; font-size: 14px; line-height: 1.35; color: #3A3832; cursor: pointer">{{ it.t }}</button></sc-if><sc-if value="{{ it.plain }}" hint-placeholder-val="{{ false }}"><span style="font-size: 14px; line-height: 1.35; color: #3A3832">{{ it.t }}</span></sc-if>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<sc-if value="{{ allSeen }}" hint-placeholder-val="{{ false }}">
+<div class="fade" style="border-top: 1px solid #151515; border-bottom: 1px solid #151515; padding: 22px 0; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+<span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15; letter-spacing: -0.03em">You've seen every stop. Want to talk?</span>
+<a href="https://www.linkedin.com/in/angela-kalopisis/" target="_blank" rel="noopener" class="ul-on" style="font-size: 16px; font-weight: 500">Connect on LinkedIn ↗</a>
+</div>
+</sc-if>
+</div>
+</section>
+
+<section id="list" style="padding: 48px clamp(20px, 4vw, 56px) 112px">
+<div style="max-width: 1328px; margin: 0 auto; display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #151515; padding-bottom: 14px; font-size: 14px; color: #6B675E"><span>All work</span><span>2020 to 2026</span></div>
+<sc-for list="{{ stops }}" as="s" hint-placeholder-count="9">
+<a class="row" href="{{ s.href }}" style="text-decoration: none; display: grid; grid-template-columns: 56px minmax(0, 1fr) auto 24px; gap: 16px; align-items: baseline; text-align: left; background: none; border: 0; border-bottom: 1px solid #D8D2C4; padding: 22px 0; font: inherit; color: #151515; cursor: pointer; width: 100%">
+<span style="font-size: 14px; color: #7A1E2C; font-variant-numeric: tabular-nums">{{ s.num }}</span>
+<span style="display: flex; flex-wrap: wrap; gap: 4px 24px; align-items: baseline"><span class="row-title" style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.1; letter-spacing: -0.03em; transition: color .2s">{{ s.title }}</span><span style="font-size: 15px; color: #6B675E">{{ s.oneLine }}</span></span>
+<span style="font-size: 14px; color: #6B675E; white-space: nowrap; font-variant-numeric: tabular-nums">{{ s.yr }}</span>
+<span class="row-arrow" aria-hidden="true">→</span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<footer id="contact" style="background: #151515; color: #F3F0E8; padding: 96px clamp(20px, 4vw, 56px) 40px">
+<div style="max-width: 1328px; margin: 0 auto; display: flex; flex-direction: column; gap: 72px">
+<div style="display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-end; justify-content: space-between">
+<p style="margin: 0; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: clamp(44px, 5.6vw, 88px); line-height: 0.95; letter-spacing: -0.045em">Want to talk?<br>Say hello.</p>
+<a href="https://www.linkedin.com/in/angela-kalopisis/" target="_blank" rel="noopener" class="ul-on" style="color: #F3F0E8; font-size: 18px">Connect on LinkedIn ↗</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 28px; justify-content: space-between; font-size: 13px; color: #A8A396; border-top: 1px solid #3A3832; padding-top: 20px">
+<span>Angela Kalopisis · London, Ontario</span>
+<span style="display: flex; flex-wrap: wrap; gap: 24px"><span>akalopis@outlook.com</span><a href="https://myvolunteerpathway.ca" target="_blank" rel="noopener" class="ul" style="color: #A8A396">My Volunteer Pathway</a></span>
+</div>
+</div>
+</footer>
+</div>
+</template>
+<script>
+
+var STOPS = [
+  { id: 'mvp', yr: '2025 to now', main: true, label: 'My Volunteer Pathway', x: '50%', y: '52%',
+    kicker: 'Founder and CEO, 2025 to now', title: 'My Volunteer Pathway',
+    oneLine: '27 organizations and 100+ volunteers on a platform I built.',
+    body: 'A platform where volunteers find opportunities and log hours in a Digital Volunteer Passport, and organizations recruit and manage volunteers in one place.',
+    body2: 'I built it myself with AI coding tools and develop it today, while also running design, outreach, pricing and partnerships.',
+    chips: [{ v: '27', l: 'organizations' }, { v: '100+', l: 'volunteers registered' }, { v: '$3K', l: 'Summer Company grant' }],
+    img: '/images/1d90c27e3f826a3f7f07cd415ae77f9a.jpg', imgAlt: 'Angela beside the My Volunteer Pathway banner at a community event', imgPos: '30% 40%',
+    cta: 'Read more', href: '/my-volunteer-pathway', cta2: 'Try it live', href2: 'https://myvolunteerpathway.ca' },
+  { id: 'limitless', yr: '2026', label: 'Representing Canada', x: '53%', y: '21%',
+    kicker: 'Delaware, April 2026 · Regina, November 2026', title: 'Representing Canada and Ontario',
+    oneLine: 'One of two Canadian teams at the Limitless World Summit, and a 4-H Ontario delegate.',
+    body: 'My Volunteer Pathway won Diamond Challenge Toronto and made the Global Top 40, one of two Canadian teams in the Social Innovation track, which took me to the Limitless World Summit in Delaware in April.',
+    body2: 'In November, I travel to Regina as one of eight 4-H Ontario delegates at the 4-H Canada National Members Forum. Use the links below for more on each.',
+    chips: [{ v: '1 of 2', l: 'Canadian teams, Social Innovation' }, { v: 'Top 40', l: 'of 3,000+ teams worldwide' }, { v: '1 of 8', l: '4-H Ontario delegates' }],
+    img: '/images/1c4d3648dd7060a891a0f0333cfedd53.jpg', imgAlt: 'Angela beside the Limitless World Summit banner at the University of Delaware', imgPos: '40% 35%', cta: 'Limitless World Summit', href: '/limitless', cta2: '4-H national forum', href2: '/4-h', arrow2: '→' },
+  { id: 'press', yr: '2026', label: 'In the news', x: '87%', y: '18%',
+    kicker: 'CTV News London and CBC Radio', title: 'In the news',
+    oneLine: 'Featured by CTV News London and CBC Afternoon Drive.',
+    body: 'CTV News London covered the Digital Volunteer Passport in October 2026.',
+    body2: 'CBC Afternoon Drive interviewed me about the platform in September 2026.',
+    chips: [{ v: 'TV', l: 'CTV News London' }, { v: 'Radio', l: 'CBC Afternoon Drive' }, { v: '2', l: 'interviews' }],
+    img: '/images/8bf83626314b40a6583f53f65864e7b6.jpg', imgAlt: 'Angela in the CBC London radio studio', imgPos: '55% 30%',
+    cta: 'Watch on CTV', href: 'https://www.ctvnews.ca/london/article/london-teen-creates-digital-passport-designed-to-make-volunteering-easier-for-students/', cta2: 'Listen on CBC', href2: 'https://www.cbc.ca/listen/live-radio/1-80-afternoon-drive/clip/16239697-london-student-designs-platform-connecting-volunteers-local-non-profits' },
+  { id: 'wings', yr: 'Since 2020', label: 'Wings & Water', x: '73%', y: '63%',
+    kicker: 'Founder, started 2020', title: 'Wings & Water',
+    oneLine: 'My first business, started at 11. $22K+ CAD in sales and 10+ retailers.',
+    body: 'My first business, started in 2020 when I was 11. It grew to more than $22,000 CAD in sales, selling handmade products and custom pet art online and at dozens of local markets.',
+    body2: 'Carried by 10+ retailers, including Western University Bookstore, Museum London and Indigo North London.',
+    chips: [{ v: '$22K+', l: 'CAD in sales' }, { v: '450+', l: 'Etsy sales' }, { v: '10+', l: 'retailers carried my products' }],
+    img: '/images/86ce49f5e2dc202f8a520461a92e06bb.jpg', imgAlt: 'Angela at her Wings and Water display at Indigo North London', imgPos: '68% 40%',
+    cta: 'Read more', href: '/wings-and-water' },
+  { id: 'rabbits', yr: '2021 to now', label: '4-H', x: '23%', y: '59%',
+    kicker: 'Youth Leader, Middlesex 4-H', title: 'Middlesex 4-H',
+    oneLine: 'Rebuilt the Rabbit Club and lead the Innovation and Entrepreneurship Club.',
+    body: 'I lead two clubs. I helped rebuild the Middlesex Rabbit Club after years of being inactive, from near the six-member minimum to about 20 members, and I lead the Middlesex Innovation and Entrepreneurship Club. I make sure members without a rabbit can take part fully.',
+    body2: 'One of eight Ontario delegates to the 4-H Canada National Members Forum in November 2026, and winner of the South Lobo Women’s Institute Scholarship for my 4-H work and leadership.',
+    chips: [{ v: '~20', l: 'Rabbit Club members' }, { v: '2', l: 'clubs I lead' }, { v: '1 of 8', l: 'Ontario delegates, national forum' }],
+    img: '/images/20252e2293df933e1cdb92a58d79bf7d.jpg', imgAlt: 'Angela teaching rabbit showmanship to a large group of 4-H members', imgPos: '52% 40%', cta: 'Read more', href: '/4-h' },
+  { id: 'clubs', yr: '2025 to now', label: 'Business clubs', x: '35%', y: '53%',
+    kicker: 'DECA, FBLA and CYIS', title: 'Business clubs',
+    oneLine: 'DECA and FBLA Co-President, CYIS Finance Director, Ivey capstone winner.',
+    body: 'Co-President of the DECA chapter at Mother Teresa CSS, now in its second year, where 100% of members wrote the regional exam this year, and of its first-year FBLA chapter.',
+    body2: 'Finance Director at the Canadian Young Investors Society, where I ran FOCUS, a case competition in Toronto.',
+    body3: 'My team won the capstone at Ivey’s 2025 Summer Leadership Program, and I placed Top 5 of 34 at the Ivey High School Case Competition.',
+    chips: [{ v: '100%', l: 'of DECA members wrote regionals' }, { v: 'Won 1st', l: 'Ivey Summer Leadership capstone' }, { v: 'Top 5', l: 'of 34 teams, IHSCC' }],
+    img: '/images/94e9df2346ee7cf14b0396839b87f0e4.jpg', imgAlt: 'Angela with her DECA team at DECA Ontario Provincials 2026', imgPos: '100% 40%', cta: 'Read more', href: '/business-clubs' },
+  { id: 'soundboard', yr: '2026 to now', label: 'Soundboard Venture Fund', x: '77.8%', y: '37%',
+    kicker: 'VC analyst intern, May 2026 to now', title: 'Soundboard Venture Fund',
+    oneLine: 'Comp analysis, exit analysis and weekly deal flow at a venture fund.',
+    body: 'I join the fund’s weekly deal flow meetings, and over the summer I joined several times a week.',
+    body2: 'I run comparable company analysis, work on exit analysis, and enter new deals into the pipeline, so I see every part of the process from first pitch to exit.',
+    body3: 'Most of this work is confidential, so I can’t share materials or name the companies involved.',
+    chips: [{ v: 'Weekly', l: 'deal flow meetings' }, { v: 'Comps', l: 'comparable company analysis' }, { v: 'Exits', l: 'exit analysis' }],
+    img: '/images/9eb1f760701c2e6f603f6845c4feee4c.jpg', imgAlt: 'Soundboard Venture Fund logo', imgPos: '50% 50%', cta: 'Read more', href: '/soundboard' },
+  { id: 'ski', yr: '2024 to now', label: 'Ski instructor', x: '21%', y: '24%',
+    kicker: 'Boler Mountain, 2024 to now', title: 'Ski instruction',
+    oneLine: 'Level 2 instructor, Professional Ski Instructors of Canada. Rookie of the Year 2025.',
+    body: 'Teaching skiing to all ages and abilities at Boler Mountain, plus adaptive ski lessons with London Track 3 in 2025.',
+    chips: [{ v: 'L2', l: 'Professional Ski Instructors of Canada' }, { v: '2025', l: 'Rookie of the Year' }, { v: '2026', l: 'Most Improved' }],
+    img: '/images/f24234565beb9237b301197a4c20796a.jpg', imgAlt: 'Angela on the hill at Boler Mountain with young skiers', imgPos: '55% 25%', cta: 'Read more', href: '/ski' },
+  { id: 'track', yr: '2025 to now', label: 'Running', x: '81%', y: '84%',
+    kicker: 'London Western Track and Field Club', title: 'Distance running',
+    oneLine: 'Club distance rep, training for IRONMAN 70.3 Muskoka.',
+    body: 'High school distance running representative at the London Western Track and Field Club, and winner of its 2025 Leadership Award.',
+    body2: 'Came first at the Guelph Lake Sprint Triathlon in September 2026. Now training for IRONMAN 70.3 Muskoka in 2027.',
+    chips: [{ v: '5:42', l: '1500 m PB' }, { v: '24:10', l: '5 km PB' }, { v: '2:12:29', l: 'sprint triathlon' }],
+    img: '/images/ee2365bfc904e81f0b1b77bb2fc12533.jpg', imgAlt: 'Angela running on a blue track', imgPos: '55% 40%',
+    cta: 'Read more', href: '/running' }
+];
+var ROLES = [{ t: 'builder', y: 'Built My Volunteer Pathway with AI tools' }, { t: 'self-starter', y: 'Started my first business at 11' }, { t: 'team leader', y: 'Rebuilt a 4-H club to about 20 members' }, { t: 'competitor', y: 'Global Top 40, Diamond Challenge' }];
+var DOING = [{ t: 'VC analyst intern, Soundboard', id: 'soundboard' }, { t: 'DECA and FBLA Co-President', id: 'clubs' }, { t: 'Ski instructor, Boler Mountain', id: 'ski' }];
+var YEARS = [
+  { y: '2020', items: [{ t: 'Started Wings & Water', id: 'wings' }, { t: 'Started coding' }] },
+  { y: '2021', items: [{ t: 'Joined 4-H', id: 'rabbits' }] },
+  { y: '2023', items: [{ t: 'First girl in Canada to reach Code Ninjas Black Belt level' }] },
+  { y: '2024', items: [{ t: 'Started ski instructing at Boler Mountain', id: 'ski' }] },
+  { y: '2025', items: [{ t: 'Started My Volunteer Pathway', id: 'mvp' }, { t: 'Won the Ivey Summer Leadership Program', id: 'clubs' }, { t: 'Finance Director, Canadian Young Investors Society', id: 'clubs' }, { t: 'Track club Leadership Award', id: 'track' }, { t: 'Rookie of the Year at Boler', id: 'ski' }] },
+  { y: '2026', items: [{ t: 'Global Top 40, Diamond Challenge', id: 'limitless' }, { t: 'Joined Soundboard Venture Fund', id: 'soundboard' }, { t: 'First at the Guelph Lake Sprint Triathlon', id: 'track' }, { t: 'On CBC and CTV News', id: 'press' }, { t: '4-H Ontario delegate, national forum', id: 'rabbits' }] }
+];
+STOPS.forEach(function (s, i) { s.n = i + 1; s.num = (i + 1 < 10 ? '0' : '') + (i + 1); });
+class Component extends DCLogic {
+  constructor() {
+    super(...arguments);
+    this.state = { sel: null, seen: {}, ri: 0, c: 0, del: false, hold: 10 };
+  }
+  componentDidMount() {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { this.setState({ c: ROLES[0].t.length }); return; }
+    this.timer = setInterval(() => this.tick(), 65);
+  }
+  componentWillUnmount() { clearInterval(this.timer); }
+  tick() {
+    this.setState(function (st) {
+      var r = ROLES[st.ri].t;
+      if (st.hold > 0) return { hold: st.hold - 1 };
+      if (!st.del) { if (st.c < r.length) return { c: st.c + 1 }; return { del: true, hold: 30 }; }
+      if (st.c > 0) return { c: st.c - 1, hold: 0 };
+      return { del: false, ri: (st.ri + 1) % ROLES.length, hold: 5 };
+    });
+  }
+  pick(id) {
+    this.setState(function (st) { var s = Object.assign({}, st.seen); s[id] = true; return { sel: id, seen: s }; });
+    var top = function () { var p = document.querySelector('.panel'); if (p) p.scrollTop = 0; };
+    top(); setTimeout(top, 0); setTimeout(top, 60);
+  }
+  goTo(id) {
+    var el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  scrollToMap() {
+    var el = document.getElementById('scene');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  prev() {
+    var i = STOPS.findIndex((s) => s.id === this.state.sel);
+    this.pick(STOPS[(i - 1 + STOPS.length) % STOPS.length].id);
+  }
+  next() {
+    var seen = this.state.seen;
+    var i = STOPS.findIndex((s) => s.id === this.state.sel);
+    for (var k = 1; k <= STOPS.length; k++) {
+      var cand = STOPS[(i + k) % STOPS.length];
+      if (!seen[cand.id]) { this.pick(cand.id); return; }
+    }
+    this.pick(STOPS[(i + 1) % STOPS.length].id);
+  }
+  renderVals() {
+    var st = this.state;
+    var seen = st.seen || {};
+    var count = Object.keys(seen).length;
+    var curRaw = STOPS.find((s) => s.id === st.sel);
+    var cur = curRaw ? Object.assign({}, curRaw, { hasImg: !!curRaw.img, noImg: !curRaw.img, hasCta2: !!curRaw.cta2, hasBody2: !!curRaw.body2, hasBody3: !!curRaw.body3, arrow2: curRaw.arrow2 || '↗' }) : null;
+    return {
+      typed: ROLES[st.ri].t.slice(0, st.c),
+      roleYear: ROLES[st.ri].y,
+      doing: DOING.map((d, i) => ({ t: d.t, sep: i < DOING.length - 1 ? 'inline' : 'none', pick: () => { this.pick(d.id); this.scrollToMap(); } })),
+      yearOpacity: st.c === ROLES[st.ri].t.length ? '1' : '0',
+      count: count,
+      total: STOPS.length,
+      allSeen: count === STOPS.length,
+      dots: STOPS.map((s) => ({ bg: seen[s.id] ? '#7A1E2C' : '#D8D2C4' })),
+      stops: STOPS.map((s) => Object.assign({}, s, {
+        cls: 'pin' + (s.main ? ' pin-main' : '') + (seen[s.id] ? ' seen' : ' ring') + (st.sel === s.id ? ' active' : ''),
+        main: !!s.main,
+        mark: seen[s.id] && st.sel !== s.id ? '✓' : String(s.n),
+        active: st.sel === s.id ? 'true' : 'false',
+        pick: () => this.pick(s.id),
+        pickScroll: () => { this.pick(s.id); this.scrollToMap(); }
+      })),
+      hasSel: !!cur,
+      cur: cur || { chips: [] },
+      close: () => this.setState({ sel: null }),
+      next: () => this.next(),
+      prev: () => this.prev(),
+      goExplore: () => this.goTo('explore'),
+      goList: () => this.goTo('list'),
+      goContact: () => this.goTo('contact'),
+      pickWings: () => this.pick('wings'),
+      pickMvp: () => this.pick('mvp'),
+      years: YEARS.map((y, i) => ({ y: y.y, color: i === YEARS.length - 1 ? '#7A1E2C' : '#151515', dot: i === YEARS.length - 1 ? '#7A1E2C' : '#151515', items: y.items.map((it) => ({ t: it.t, link: !!it.id, plain: !it.id, go: () => { if (it.id) { this.pick(it.id); this.scrollToMap(); } } })) })),
+      pickLimitless: () => { this.pick('limitless'); var el = document.getElementById('explore'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
+    };
+  }
+}
+
+mountDC(Component, document.getElementById('app'), document.getElementById('tpl').innerHTML);
+</script>
+</body>
+</html>
