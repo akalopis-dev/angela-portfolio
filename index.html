@@ -58,7 +58,8 @@ a{color:#151515}a:hover{color:#7A1E2C}
 .row-arrow{transition:transform .25s}
 .hero-row{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:flex-end;justify-content:space-between}
 @media (max-width:1240px){.pin-label{font-size:12px;padding:4px 8px}.pin:not(.pin-main):not(.active):not(:hover):not(:focus-visible) .pin-label{display:none}}
-@media (max-width:820px){.facts{grid-template-columns:repeat(2,minmax(0,1fr)) !important;row-gap:16px !important}.pin-label{display:none}.pin-dot{width:28px;height:28px;font-size:12px}.panel{position:static !important;width:auto !important;margin-top:16px}}
+@media (max-width:820px){.facts{grid-template-columns:repeat(2,minmax(0,1fr)) !important;row-gap:16px !important}.pin-label{display:none}.pin-dot{width:34px;height:34px;font-size:13px}.panel{position:fixed !important;left:0 !important;right:0 !important;bottom:0 !important;top:auto !important;width:auto !important;max-height:86vh;border-radius:16px 16px 0 0 !important;z-index:60 !important;animation:sheet .35s cubic-bezier(.2,.7,.1,1) both !important}.backdrop{position:fixed !important;z-index:59 !important;background:rgba(21,21,21,.45) !important}.scene{animation:none !important;clip-path:none !important;opacity:1 !important}}
+@keyframes sheet{from{transform:translateY(100%)}to{transform:none}}
 @media (prefers-reduced-motion: reduce){.line > span,.fade,.scene,.hop,.bob,.drift,.float,.wave,.panel,.pin.ring .pin-dot,.caret{animation:none !important}}
 @media (max-width:900px){.tl{grid-template-columns:repeat(2,minmax(0,1fr)) !important;row-gap:28px !important}.tl>div[aria-hidden]{display:none}}
 .proof:hover span:last-child{color:#7A1E2C}
@@ -293,7 +294,7 @@ a{color:#151515}a:hover{color:#7A1E2C}
 <g><path d="M30 640 L46 596 L62 640 Z" fill="#6E8C63"></path><path d="M46 596 L62 640 L46 640 Z" fill="#5C7752"></path></g>
 <g><path d="M884 540 L898 500 L912 540 Z" fill="#6E8C63"></path><path d="M898 500 L912 540 L898 540 Z" fill="#5C7752"></path></g>
 </svg>
-<sc-if value="{{ hasSel }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ close }}" aria-label="Close the card" style="position: absolute; inset: 0; z-index: 1; border: 0; padding: 0; background: rgba(21,21,21,.10); cursor: zoom-out"></button></sc-if>
+<sc-if value="{{ hasSel }}" hint-placeholder-val="{{ false }}"><button type="button" class="backdrop" onClick="{{ close }}" aria-label="Close the card" style="position: absolute; inset: 0; z-index: 1; border: 0; padding: 0; background: rgba(21,21,21,.10); cursor: zoom-out"></button></sc-if>
 <sc-for list="{{ stops }}" as="s" hint-placeholder-count="9">
 <button type="button" class="{{ s.cls }}" style="left: {{ s.x }}; top: {{ s.y }}" onClick="{{ s.pick }}" aria-label="Explore {{ s.label }}" aria-pressed="{{ s.active }}"><span class="pin-dot">{{ s.mark }}</span><span class="pin-label">{{ s.label }}<sc-if value="{{ s.main }}" hint-placeholder-val="{{ false }}"><span class="pin-tag">Start here</span></sc-if></span></button>
 </sc-for>
