@@ -8,14 +8,14 @@
 <meta property="og:title" content="Angela Kalopisis">
 <meta property="og:description" content="Angela Kalopisis, founder of My Volunteer Pathway. An illustrated map of what I have built since 2020.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2323305E'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='800' font-size='30' text-anchor='middle' fill='%23F2F3F0'%3EAK%3C/text%3E%3C/svg%3E">
-<link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<style>@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:100 900;font-stretch:62% 125%;src:url(/fonts/archivo-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Archivo';font-style:normal;font-display:swap;font-weight:100 900;font-stretch:62% 125%;src:url(/fonts/archivo-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237A1E2C'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='800' font-size='30' text-anchor='middle' fill='%23F3F0E8'%3EAK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&amp;display=swap">
 <style>
-.bgfx{position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(rgba(242,243,240,.6),rgba(242,243,240,.76)),url(/images/8a127ecce75334509f878f4fc3acd98d.jpg) center/cover no-repeat;transform:scale(1.05)}h1{font-stretch:112%}
 body{margin:0}
-a{color:#151515}a:hover{color:#23305E}
+a{color:#151515}a:hover{color:#7A1E2C}
 .ul{text-decoration:none;background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .35s ease,color .2s}
 .ul:hover{background-size:100% 1px}
 .ul-on{text-decoration:none;background-image:linear-gradient(currentColor,currentColor);background-size:100% 1px;background-repeat:no-repeat;background-position:0 100%}
@@ -44,16 +44,16 @@ a{color:#151515}a:hover{color:#23305E}
 .pin-dot{width:34px;height:34px;border-radius:50%;background:#151515;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:14px;box-shadow:0 0 0 3px #FFFFFF,0 6px 14px rgba(21,21,21,.25);transition:transform .25s cubic-bezier(.2,.7,.1,1),background .2s}
 .pin.ring .pin-dot{animation:ping 2s ease-out infinite}
 .pin.seen .pin-dot{background:#FFFFFF;color:#151515}
-.pin.active .pin-dot{background:#23305E;color:#FFFFFF;transform:scale(1.15)}
+.pin.active .pin-dot{background:#7A1E2C;color:#FFFFFF;transform:scale(1.15)}
 .pin:hover .pin-dot{transform:scale(1.12)}
-.pin-main .pin-dot{width:46px;height:46px;font-size:16px;background:#23305E}
-.pin-main.seen .pin-dot{background:#FFFFFF;color:#23305E}
-.pin-tag{display:inline-block;margin-left:6px;padding:2px 6px;border-radius:3px;background:#23305E;color:#FFFFFF;font-size:11px;font-weight:600;letter-spacing:.02em}
+.pin-main .pin-dot{width:46px;height:46px;font-size:16px;background:#7A1E2C}
+.pin-main.seen .pin-dot{background:#FFFFFF;color:#7A1E2C}
+.pin-tag{display:inline-block;margin-left:6px;padding:2px 6px;border-radius:3px;background:#7A1E2C;color:#FFFFFF;font-size:11px;font-weight:600;letter-spacing:.02em}
 .pin-label{background:rgba(255,255,255,.94);color:#151515;border-radius:4px;padding:5px 9px;font-size:13px;font-weight:500;white-space:nowrap;box-shadow:0 4px 12px rgba(21,21,21,.12);opacity:.92;transition:opacity .2s}
 .pin:hover .pin-label,.pin.active .pin-label{opacity:1}
-.pin:focus-visible{outline:2px solid #23305E;outline-offset:6px;border-radius:8px}
+.pin:focus-visible{outline:2px solid #7A1E2C;outline-offset:6px;border-radius:8px}
 .panel{animation:slidein .4s cubic-bezier(.2,.7,.1,1) both}
-.row:hover .row-title{color:#23305E}
+.row:hover .row-title{color:#7A1E2C}
 .row:hover .row-arrow{transform:translateX(4px)}
 .row-arrow{transition:transform .25s}
 .hero-row{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:flex-end;justify-content:space-between}
@@ -62,11 +62,11 @@ a{color:#151515}a:hover{color:#23305E}
 @keyframes sheet{from{transform:translateY(100%)}to{transform:none}}
 @media (prefers-reduced-motion: reduce){.line > span,.fade,.scene,.hop,.bob,.drift,.float,.wave,.panel,.pin.ring .pin-dot,.caret{animation:none !important}}
 @media (max-width:900px){.tl{grid-template-columns:repeat(2,minmax(0,1fr)) !important;row-gap:28px !important}.tl>div[aria-hidden]{display:none}}
-.proof:hover span:last-child{color:#23305E}
+.proof:hover span:last-child{color:#7A1E2C}
 @media (max-width:700px){.proofs{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
 </style>
 
-<style>html{background:#F2F3F0}body{margin:0}*{box-sizing:border-box}</style>
+<style>html{background:#F3F0E8}body{margin:0}*{box-sizing:border-box}</style>
 <script src="/idiomorph.min.js"></script>
 <script src="/runtime.js"></script>
 </head>
@@ -74,11 +74,10 @@ a{color:#151515}a:hover{color:#23305E}
 <div id="app"></div>
 <template id="tpl">
 
-<div style="width: 100%; position: relative; isolation: isolate; color: #151515; font-family: 'Archivo', sans-serif">
-<div class="bgfx" aria-hidden="true"></div>
+<div style="width: 100%; background: #F3F0E8; color: #151515; font-family: 'Schibsted Grotesk', sans-serif">
 
 <header style="padding: 0 clamp(20px, 4vw, 56px)">
-<div style="max-width: 1328px; margin: 0 auto; min-height: 76px; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: flex-end; border-bottom: 1px solid #D3D6D1">
+<div style="max-width: 1328px; margin: 0 auto; min-height: 76px; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: flex-end; border-bottom: 1px solid #D8D2C4">
 <nav aria-label="Primary" style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 15px">
 <button type="button" onClick="{{ goList }}" class="ul" style="background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer">All work</button>
 <button type="button" onClick="{{ goContact }}" class="ul" style="background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer">Contact</button>
@@ -90,36 +89,36 @@ a{color:#151515}a:hover{color:#23305E}
 <div style="max-width: 1328px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
 
 <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px">
-<h1 style="margin: 0; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: clamp(56px, 8.4vw, 124px); line-height: 0.92; letter-spacing: -0.05em; font-weight: 800">
+<h1 style="margin: 0; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: clamp(56px, 8.4vw, 124px); line-height: 0.92; letter-spacing: -0.05em; font-weight: 800">
 <span class="line"><span>Angela Kalopisis</span></span>
 </h1>
-<p class="fade" style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 4px 14px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: clamp(22px, 2.3vw, 32px); line-height: 1.15; min-height: 1.25em; color: #5E625F; font-weight: 500; letter-spacing: -0.02em; animation-delay: .2s"><span>I'm a <span style="color: #151515; font-weight: 700">{{ typed }}</span><span class="caret" aria-hidden="true"></span></span><span style="font-family: 'Archivo', sans-serif; font-size: 15px; color: #5E625F; opacity: {{ yearOpacity }}; transition: opacity .3s; border-left: 1px solid #D3D6D1; padding-left: 14px">{{ roleYear }}</span></p>
-<div class="fade proofs" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px 24px; width: 100%; max-width: 960px; margin-top: 14px; animation-delay: .3s"><button type="button" onClick="{{ pickWings }}" class="proof" style="background: none; border: 0; border-left: 1px solid #D3D6D1; padding: 2px 0 2px 16px; font: inherit; text-align: left; cursor: pointer; color: inherit; display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 0.9; letter-spacing: -0.05em; color: #23305E">2020</span><span style="font-size: 14px; line-height: 1.35; color: #2F3236">Building since, starting with Wings &amp; Water at 11</span></button><button type="button" onClick="{{ pickWings }}" class="proof" style="background: none; border: 0; border-left: 1px solid #D3D6D1; padding: 2px 0 2px 16px; font: inherit; text-align: left; cursor: pointer; color: inherit; display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 0.9; letter-spacing: -0.05em; color: #151515">$22K+</span><span style="font-size: 14px; line-height: 1.35; color: #2F3236">in sales from Wings &amp; Water</span></button><button type="button" onClick="{{ pickMvp }}" class="proof" style="background: none; border: 0; border-left: 1px solid #D3D6D1; padding: 2px 0 2px 16px; font: inherit; text-align: left; cursor: pointer; color: inherit; display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 0.9; letter-spacing: -0.05em; color: #151515">27</span><span style="font-size: 14px; line-height: 1.35; color: #2F3236">organizations on My Volunteer Pathway</span></button><button type="button" onClick="{{ pickLimitless }}" class="proof" style="background: none; border: 0; border-left: 1px solid #D3D6D1; padding: 2px 0 2px 16px; font: inherit; text-align: left; cursor: pointer; color: inherit; display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 0.9; letter-spacing: -0.05em; color: #151515">Top 40</span><span style="font-size: 14px; line-height: 1.35; color: #2F3236">of 3,000+ teams, Diamond Challenge</span></button></div>
+<p class="fade" style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 4px 14px; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: clamp(22px, 2.3vw, 32px); line-height: 1.15; min-height: 1.25em; color: #6B675E; font-weight: 500; letter-spacing: -0.02em; animation-delay: .2s"><span>I'm a <span style="color: #151515; font-weight: 700">{{ typed }}</span><span class="caret" aria-hidden="true"></span></span><span style="font-family: 'Schibsted Grotesk', sans-serif; font-size: 15px; color: #6B675E; opacity: {{ yearOpacity }}; transition: opacity .3s; border-left: 1px solid #D8D2C4; padding-left: 14px">{{ roleYear }}</span></p>
+<div class="fade proofs" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px 24px; width: 100%; max-width: 960px; margin-top: 14px; animation-delay: .3s"><button type="button" onClick="{{ pickWings }}" class="proof" style="background: none; border: 0; border-left: 1px solid #D8D2C4; padding: 2px 0 2px 16px; font: inherit; text-align: left; cursor: pointer; color: inherit; display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 0.9; letter-spacing: -0.05em; color: #7A1E2C">2020</span><span style="font-size: 14px; line-height: 1.35; color: #3A3832">Building since, starting with Wings &amp; Water at 11</span></button><button type="button" onClick="{{ pickWings }}" class="proof" style="background: none; border: 0; border-left: 1px solid #D8D2C4; padding: 2px 0 2px 16px; font: inherit; text-align: left; cursor: pointer; color: inherit; display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 0.9; letter-spacing: -0.05em; color: #151515">$22K+</span><span style="font-size: 14px; line-height: 1.35; color: #3A3832">in sales from Wings &amp; Water</span></button><button type="button" onClick="{{ pickMvp }}" class="proof" style="background: none; border: 0; border-left: 1px solid #D8D2C4; padding: 2px 0 2px 16px; font: inherit; text-align: left; cursor: pointer; color: inherit; display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 0.9; letter-spacing: -0.05em; color: #151515">27</span><span style="font-size: 14px; line-height: 1.35; color: #3A3832">organizations on My Volunteer Pathway</span></button><button type="button" onClick="{{ pickLimitless }}" class="proof" style="background: none; border: 0; border-left: 1px solid #D8D2C4; padding: 2px 0 2px 16px; font: inherit; text-align: left; cursor: pointer; color: inherit; display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 800; font-size: clamp(36px, 3.6vw, 52px); line-height: 0.9; letter-spacing: -0.05em; color: #151515">Top 40</span><span style="font-size: 14px; line-height: 1.35; color: #3A3832">of 3,000+ teams, Diamond Challenge</span></button></div>
 </div>
 
-<div class="fade" style="display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; justify-content: center; margin-bottom: -16px; font-size: 14px; color: #5E625F; animation-delay: .4s">
+<div class="fade" style="display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; justify-content: center; margin-bottom: -16px; font-size: 14px; color: #6B675E; animation-delay: .4s">
 <span>Click a pin to explore, or use Next stop to see all nine.</span>
 <span style="display: inline-flex; flex-wrap: wrap; gap: 8px 18px; align-items: center">
 <span style="display: inline-flex; gap: 4px" aria-hidden="true"><sc-for list="{{ dots }}" as="d" hint-placeholder-count="9"><span style="width: 14px; height: 3px; border-radius: 2px; background: {{ d.bg }}"></span></sc-for></span>
 <span style="font-variant-numeric: tabular-nums">{{ count }} of {{ total }} explored</span>
-<button type="button" onClick="{{ goList }}" class="ul-on" style="background: none; border: 0; padding: 0; font: inherit; color: #5E625F; cursor: pointer">Prefer a list?</button>
+<button type="button" onClick="{{ goList }}" class="ul-on" style="background: none; border: 0; padding: 0; font: inherit; color: #6B675E; cursor: pointer">Prefer a list?</button>
 </span>
 </div>
 
 <div id="scene" style="position: relative; scroll-margin-top: 24px">
-<div class="scene" style="position: relative; width: 100%; aspect-ratio: 1440 / 760; border-radius: 8px; overflow: hidden; background: #E3E9EA">
+<div class="scene" style="position: relative; width: 100%; aspect-ratio: 1440 / 760; border-radius: 8px; overflow: hidden; background: #EFE6D8">
 <svg viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustrated town with a ski hill and lodge, a plane, a school, a barn with a silo and rabbits, a community centre, an office tower, a white market tent with a blue table of geometric bird art, a radio tower and a running track" style="position: absolute; inset: 0; width: 100%; height: 100%">
-<rect width="1440" height="760" fill="#E3E9EA"></rect>
+<rect width="1440" height="760" fill="#EFE6D8"></rect>
 <circle cx="1110" cy="150" r="120" fill="#F4DCC4" opacity=".6"></circle>
 <circle cx="1110" cy="150" r="62" fill="#EFC09A"></circle>
 <g class="drift" fill="#FBF8F2" opacity=".9"><path d="M500 118 h150 a22 22 0 0 0 -30 -26 a34 34 0 0 0 -62 -6 a26 26 0 0 0 -40 18 a18 18 0 0 0 -18 14 Z"></path><path d="M860 86 h110 a18 18 0 0 0 -24 -20 a26 26 0 0 0 -48 -4 a20 20 0 0 0 -38 24 Z"></path></g>
-<path d="M430 262 C 520 200, 610 236, 700 178" fill="none" stroke="#23305E" stroke-width="2" stroke-dasharray="6 8" stroke-linecap="round" opacity=".55"></path>
+<path d="M430 262 C 520 200, 610 236, 700 178" fill="none" stroke="#7A1E2C" stroke-width="2" stroke-dasharray="6 8" stroke-linecap="round" opacity=".55"></path>
 <g class="float"><g transform="rotate(-9 764 166)">
-<path d="M722 160 L712 136 L728 136 L744 158 Z" fill="#23305E"></path>
+<path d="M722 160 L712 136 L728 136 L744 158 Z" fill="#7A1E2C"></path>
 <path d="M764 160 L750 140 L762 140 L786 160 Z" fill="#D6CFC2"></path>
 <path d="M716 167 C716 160 724 156 736 156 L794 156 C806 156 814 162 814 166 C814 171 806 175 794 175 L736 175 C724 175 716 173 716 167 Z" fill="#FBF8F2"></path>
 <path d="M716 169 L814 169 C812 172 806 175 794 175 L736 175 C724 175 716 173 716 169 Z" fill="#E4DED2"></path>
-<rect x="728" y="166" width="70" height="3" fill="#23305E"></rect>
+<rect x="728" y="166" width="70" height="3" fill="#7A1E2C"></rect>
 <g fill="#AEC1CC"><circle cx="746" cy="162" r="2.2"></circle><circle cx="755" cy="162" r="2.2"></circle><circle cx="764" cy="162" r="2.2"></circle><circle cx="773" cy="162" r="2.2"></circle><circle cx="782" cy="162" r="2.2"></circle><path d="M800 159 L809 163 L800 164 Z"></path></g>
 <path d="M760 170 L742 194 L754 194 L784 171 Z" fill="#E9E4DA"></path>
 </g></g>
@@ -132,14 +131,15 @@ a{color:#151515}a:hover{color:#23305E}
 <path d="M420 300 C 400 350, 460 390, 430 440" fill="none" stroke="#E3E6E4" stroke-width="7" stroke-linecap="round" opacity=".8"></path>
 <path d="M120 506 L364 232" stroke="#4A3F3A" stroke-width="1.5"></path>
 <g stroke="#4A3F3A" stroke-width="2"><path d="M172 448 V474 M242 369 V395 M312 290 V316"></path><path d="M164 448 H180 M234 369 H250 M304 290 H320" stroke-width="1.5"></path></g>
-<g class="lift"><g><path d="M120 506 V514" stroke="#4A3F3A" stroke-width="1"></path><rect x="114" y="514" width="12" height="9" rx="2" fill="#23305E"></rect><animateTransform attributeName="transform" type="translate" from="0 0" to="244 -274" dur="20s" begin="-0s" repeatCount="indefinite"></animateTransform><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.92;1" dur="20s" begin="-0s" repeatCount="indefinite"></animate></g><g><path d="M120 506 V514" stroke="#4A3F3A" stroke-width="1"></path><rect x="114" y="514" width="12" height="9" rx="2" fill="#23305E"></rect><animateTransform attributeName="transform" type="translate" from="0 0" to="244 -274" dur="20s" begin="-4s" repeatCount="indefinite"></animateTransform><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.92;1" dur="20s" begin="-4s" repeatCount="indefinite"></animate></g><g><path d="M120 506 V514" stroke="#4A3F3A" stroke-width="1"></path><rect x="114" y="514" width="12" height="9" rx="2" fill="#23305E"></rect><animateTransform attributeName="transform" type="translate" from="0 0" to="244 -274" dur="20s" begin="-8s" repeatCount="indefinite"></animateTransform><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.92;1" dur="20s" begin="-8s" repeatCount="indefinite"></animate></g><g><path d="M120 506 V514" stroke="#4A3F3A" stroke-width="1"></path><rect x="114" y="514" width="12" height="9" rx="2" fill="#23305E"></rect><animateTransform attributeName="transform" type="translate" from="0 0" to="244 -274" dur="20s" begin="-12s" repeatCount="indefinite"></animateTransform><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.92;1" dur="20s" begin="-12s" repeatCount="indefinite"></animate></g><g><path d="M120 506 V514" stroke="#4A3F3A" stroke-width="1"></path><rect x="114" y="514" width="12" height="9" rx="2" fill="#23305E"></rect><animateTransform attributeName="transform" type="translate" from="0 0" to="244 -274" dur="20s" begin="-16s" repeatCount="indefinite"></animateTransform><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.92;1" dur="20s" begin="-16s" repeatCount="indefinite"></animate></g></g>
+<g fill="#7A1E2C"><rect x="196" y="420" width="12" height="9" rx="2"></rect><rect x="264" y="344" width="12" height="9" rx="2"></rect><rect x="334" y="266" width="12" height="9" rx="2"></rect></g>
+<g stroke="#4A3F3A" stroke-width="1"><path d="M202 412 V420 M270 336 V344 M340 258 V266"></path></g>
 <g><path d="M70 470 L84 430 L98 470 Z" fill="#6E8C63"></path><path d="M84 430 L98 470 L84 470 Z" fill="#5C7752"></path><path d="M470 488 L486 444 L502 488 Z" fill="#6E8C63"></path><path d="M486 444 L502 488 L486 488 Z" fill="#5C7752"></path><path d="M500 494 L512 462 L524 494 Z" fill="#6E8C63"></path><path d="M512 462 L524 494 L512 494 Z" fill="#5C7752"></path></g>
 
 <g stroke="#4A3F3A" stroke-width="2" fill="none" stroke-linecap="round"><path d="M1250 172 L1214 440 M1250 172 L1286 440 M1224 372 L1276 372 M1231 302 L1269 302 M1239 236 L1261 236 M1224 372 L1269 302 M1231 302 L1261 236 M1214 440 L1276 372 M1231 302 L1276 372"></path></g>
 <g stroke="#8C7A68" stroke-width="1" opacity=".7"><path d="M1250 200 L1170 420 M1250 200 L1330 420"></path></g>
-<rect x="1240" y="196" width="20" height="8" fill="#23305E"></rect>
+<rect x="1240" y="196" width="20" height="8" fill="#7A1E2C"></rect>
 <circle cx="1250" cy="168" r="7" fill="#C2412A"></circle>
-<g fill="none" stroke="#23305E" stroke-width="3" stroke-linecap="round"><path class="wave" d="M1224 144 A 38 38 0 0 1 1276 144"></path><path class="wave" style="animation-delay: 1s" d="M1208 124 A 60 60 0 0 1 1292 124"></path></g>
+<g fill="none" stroke="#7A1E2C" stroke-width="3" stroke-linecap="round"><path class="wave" d="M1224 144 A 38 38 0 0 1 1276 144"></path><path class="wave" style="animation-delay: 1s" d="M1208 124 A 60 60 0 0 1 1292 124"></path></g>
 
 <path d="M0 470 C 200 404, 380 444, 560 424 S 900 384, 1100 412 S 1350 392, 1440 412 L1440 760 L0 760 Z" fill="#C8D3B4"></path>
 <g fill="#AFC198"><circle cx="640" cy="402" r="10"></circle><circle cx="660" cy="398" r="8"></circle><circle cx="960" cy="396" r="9"></circle><circle cx="1360" cy="398" r="10"></circle><circle cx="1378" cy="402" r="7"></circle><circle cx="880" cy="398" r="8"></circle></g>
@@ -156,7 +156,7 @@ a{color:#151515}a:hover{color:#23305E}
 
 <ellipse cx="1250" cy="434" rx="30" ry="4" fill="#2B2522" opacity=".12"></ellipse>
 <rect x="1232" y="414" width="36" height="20" fill="#E9DCC8"></rect><rect x="1250" y="414" width="18" height="20" fill="#D6C5AC"></rect>
-<path d="M1228 416 L1250 404 L1272 416 Z" fill="#23305E"></path>
+<path d="M1228 416 L1250 404 L1272 416 Z" fill="#7A1E2C"></path>
 <rect x="1240" y="422" width="8" height="12" fill="#5E2620"></rect>
 
 <ellipse cx="1120" cy="432" rx="60" ry="5" fill="#2B2522" opacity=".1"></ellipse>
@@ -178,14 +178,14 @@ a{color:#151515}a:hover{color:#23305E}
 <path d="M548 398 L574 405 L548 412 Z" fill="#C2412A"></path>
 <rect x="440" y="464" width="130" height="84" fill="#EAD9BC"></rect>
 <rect x="505" y="464" width="65" height="84" fill="#DCC8A6"></rect>
-<path d="M430 468 L505 432 L580 468 Z" fill="#23305E"></path>
+<path d="M430 468 L505 432 L580 468 Z" fill="#7A1E2C"></path>
 <path d="M505 432 L580 468 L505 468 Z" fill="#5E1722"></path>
-<rect x="496" y="414" width="18" height="20" fill="#F2F3F0"></rect>
+<rect x="496" y="414" width="18" height="20" fill="#F3F0E8"></rect>
 <path d="M492 416 L505 404 L518 416 Z" fill="#5E1722"></path>
 <circle cx="505" cy="424" r="4" fill="#C9A43F"></circle>
 <rect x="454" y="476" width="16" height="14" fill="#C3D3DC"></rect><rect x="478" y="476" width="16" height="14" fill="#C3D3DC"></rect><rect x="516" y="476" width="16" height="14" fill="#AEC1CC"></rect><rect x="540" y="476" width="16" height="14" fill="#AEC1CC"></rect>
 <rect x="454" y="500" width="16" height="14" fill="#C3D3DC"></rect><rect x="540" y="500" width="16" height="14" fill="#AEC1CC"></rect>
-<circle cx="505" cy="452" r="7" fill="#F2F3F0"></circle><path d="M505 448 V452 L508 454" stroke="#4A3F3A" stroke-width="1.2" fill="none"></path>
+<circle cx="505" cy="452" r="7" fill="#F3F0E8"></circle><path d="M505 448 V452 L508 454" stroke="#4A3F3A" stroke-width="1.2" fill="none"></path>
 <rect x="491" y="508" width="28" height="36" fill="#5E1722"></rect>
 <path d="M505 508 V544" stroke="#4A1E19" stroke-width="1.5"></path>
 <rect x="484" y="544" width="42" height="4" fill="#CFC4AE"></rect><rect x="478" y="548" width="54" height="4" fill="#BDB29B"></rect>
@@ -200,16 +200,16 @@ a{color:#151515}a:hover{color:#23305E}
 <g stroke="#A9B6BC" stroke-width="1.5"><path d="M222 504 H256 M222 532 H256 M222 560 H256 M222 588 H256"></path></g>
 <path d="M262 604 L262 488 L284 458 L332 440 L380 458 L402 488 L402 604 Z" fill="#9E3B2E"></path>
 <path d="M332 440 L380 458 L402 488 L402 604 L370 604 L370 470 Z" fill="#83302A" opacity=".55"></path>
-<path d="M262 490 L284 458 L332 440 L380 458 L402 490" fill="none" stroke="#F2F3F0" stroke-width="4" stroke-linejoin="round"></path>
-<rect x="318" y="460" width="28" height="24" fill="#F2F3F0"></rect>
+<path d="M262 490 L284 458 L332 440 L380 458 L402 490" fill="none" stroke="#F3F0E8" stroke-width="4" stroke-linejoin="round"></path>
+<rect x="318" y="460" width="28" height="24" fill="#F3F0E8"></rect>
 <path d="M321 463 L343 481 M343 463 L321 481" stroke="#9E3B2E" stroke-width="2.5"></path>
-<rect x="312" y="492" width="40" height="40" rx="2" fill="#F2F3F0"></rect>
+<rect x="312" y="492" width="40" height="40" rx="2" fill="#F3F0E8"></rect>
 <g fill="#3E8E4F"><ellipse cx="332" cy="505" rx="5.5" ry="7"></ellipse><ellipse cx="332" cy="519" rx="5.5" ry="7"></ellipse><ellipse cx="325" cy="512" rx="7" ry="5.5"></ellipse><ellipse cx="339" cy="512" rx="7" ry="5.5"></ellipse></g>
 <path d="M332 512 Q 336 522 340 526" stroke="#3E8E4F" stroke-width="1.8" fill="none"></path>
-<rect x="306" y="540" width="52" height="64" fill="#F2F3F0"></rect>
+<rect x="306" y="540" width="52" height="64" fill="#F3F0E8"></rect>
 <rect x="310" y="544" width="44" height="56" fill="none" stroke="#9E3B2E" stroke-width="2"></rect>
 <path d="M310 544 L354 600 M354 544 L310 600" stroke="#9E3B2E" stroke-width="3"></path>
-<path d="M262 604 V488 M402 604 V488" stroke="#F2F3F0" stroke-width="3"></path>
+<path d="M262 604 V488 M402 604 V488" stroke="#F3F0E8" stroke-width="3"></path>
 <g><ellipse cx="420" cy="598" rx="16" ry="12" fill="#E2C77E"></ellipse><rect x="404" y="586" width="16" height="24" fill="#E2C77E"></rect><ellipse cx="404" cy="598" rx="6" ry="12" fill="#D3B566"></ellipse><path d="M410 590 H420 M410 598 H420 M410 606 H420" stroke="#C9A85A" stroke-width="1"></path></g>
 <g stroke="#8C7A68" stroke-width="2" fill="none"><path d="M140 612 L212 604 M140 630 L212 622 M150 598 L150 640 M182 594 L182 636 M212 590 L212 632"></path></g>
 <g><rect x="150" y="652" width="34" height="22" fill="#B08A6A"></rect><path d="M146 654 L167 642 L188 654 Z" fill="#8C6A50"></path><rect x="155" y="657" width="24" height="13" fill="#E9DCC8"></rect><path d="M161 657 V670 M167 657 V670 M173 657 V670" stroke="#B08A6A" stroke-width="1"></path></g>
@@ -227,8 +227,8 @@ a{color:#151515}a:hover{color:#23305E}
 <path d="M664 442 L720 402 L776 442 Z" fill="#E9DCC8"></path>
 <path d="M720 402 L776 442 L720 442 Z" fill="#D6C5AC"></path>
 <circle cx="720" cy="426" r="8" fill="#C3D3DC"></circle>
-<rect x="640" y="460" width="160" height="24" rx="2" fill="#F2F3F0"></rect>
-<text x="720" y="476.5" text-anchor="middle" font-family="'Archivo', sans-serif" font-weight="600" font-size="11.5" letter-spacing="2.4" fill="#202F5D">COMMUNITY CENTRE</text>
+<rect x="640" y="460" width="160" height="24" rx="2" fill="#F3F0E8"></rect>
+<text x="720" y="476.5" text-anchor="middle" font-family="'Schibsted Grotesk', sans-serif" font-weight="600" font-size="11.5" letter-spacing="2.4" fill="#202F5D">COMMUNITY CENTRE</text>
 <rect x="612" y="498" width="42" height="34" fill="#C3D3DC"></rect><rect x="612" y="530" width="42" height="4" fill="#E9DCC8"></rect>
 <rect x="786" y="498" width="42" height="34" fill="#AEC1CC"></rect><rect x="786" y="530" width="42" height="4" fill="#D6C5AC"></rect>
 <path d="M676 504 H764 L774 522 H666 Z" fill="#68A645"></path>
@@ -243,7 +243,7 @@ a{color:#151515}a:hover{color:#23305E}
 <g class="bob"><ellipse cx="578" cy="634" rx="14" ry="2.5" fill="#2B2522" opacity=".12"></ellipse><rect x="567" y="592" width="22" height="40" rx="11" fill="#68A645"></rect><circle cx="578" cy="581" r="9.5" fill="#E8C3A2"></circle><rect x="584" y="604" width="20" height="15" rx="2" fill="#D9B48F"></rect></g>
 <g class="bob" style="animation-delay: .6s"><ellipse cx="647" cy="644" rx="14" ry="2.5" fill="#2B2522" opacity=".12"></ellipse><rect x="636" y="602" width="22" height="40" rx="11" fill="#202F5D"></rect><circle cx="647" cy="591" r="9.5" fill="#8D5B3E"></circle></g>
 <g class="bob" style="animation-delay: 1.2s"><ellipse cx="801" cy="642" rx="14" ry="2.5" fill="#2B2522" opacity=".12"></ellipse><rect x="790" y="600" width="22" height="40" rx="11" fill="#E7B9BF"></rect><circle cx="801" cy="589" r="9.5" fill="#C68E6A"></circle></g>
-<g class="bob" style="animation-delay: 1.8s"><ellipse cx="863" cy="632" rx="14" ry="2.5" fill="#2B2522" opacity=".12"></ellipse><rect x="852" y="590" width="22" height="40" rx="11" fill="#23305E"></rect><circle cx="863" cy="579" r="9.5" fill="#E8C3A2"></circle><rect x="836" y="602" width="20" height="15" rx="2" fill="#D9B48F"></rect></g>
+<g class="bob" style="animation-delay: 1.8s"><ellipse cx="863" cy="632" rx="14" ry="2.5" fill="#2B2522" opacity=".12"></ellipse><rect x="852" y="590" width="22" height="40" rx="11" fill="#7A1E2C"></rect><circle cx="863" cy="579" r="9.5" fill="#E8C3A2"></circle><rect x="836" y="602" width="20" height="15" rx="2" fill="#D9B48F"></rect></g>
 
 <ellipse cx="1030" cy="616" rx="118" ry="8" fill="#2B2522" opacity=".12"></ellipse>
 <path d="M990 530 V612 M1110 530 V612" stroke="#B5AFA4" stroke-width="3"></path>
@@ -270,7 +270,7 @@ a{color:#151515}a:hover{color:#23305E}
 <rect x="1029" y="540" width="13" height="13" fill="#2B2522"></rect><rect x="1031" y="542" width="9" height="9" fill="#FBF8F2"></rect><path d="M1032 550 L1035 543 L1039 550 Z" fill="#5B7FB5"></path><path d="M1035 543 L1039 550 L1036 550 Z" fill="#DCE4EE"></path>
 <rect x="1014" y="555" width="13" height="13" fill="#2B2522"></rect><rect x="1016" y="557" width="9" height="9" fill="#FBF8F2"></rect><path d="M1017 565 L1020 558 L1024 565 Z" fill="#8C6A55"></path><path d="M1019 559 L1021 558 L1021 562 Z" fill="#2B2522"></path>
 <rect x="1029" y="555" width="13" height="13" fill="#2B2522"></rect><rect x="1031" y="557" width="9" height="9" fill="#FBF8F2"></rect><path d="M1032 565 L1035 558 L1039 565 Z" fill="#C97B3F"></path><path d="M1035 558 L1039 565 L1036 565 Z" fill="#A85F2C"></path></g>
-<g><rect x="1046" y="556" width="16" height="12" fill="#2B2522"></rect><path d="M1049 560 H1059 M1049 563 H1056" stroke="#F2F3F0" stroke-width="1"></path></g>
+<g><rect x="1046" y="556" width="16" height="12" fill="#2B2522"></rect><path d="M1049 560 H1059 M1049 563 H1056" stroke="#F3F0E8" stroke-width="1"></path></g>
 <g><rect x="1068" y="532" width="44" height="36" fill="#E2C9A2"></rect><rect x="1068" y="549" width="44" height="3" fill="#C9A47F"></rect><rect x="1088" y="532" width="3" height="36" fill="#C9A47F"></rect><rect x="1068" y="532" width="44" height="3" fill="#C9A47F"></rect>
 <rect x="1072" y="538" width="12" height="10" fill="#E7B9BF"></rect><rect x="1094" y="539" width="14" height="9" fill="#7CCBE6"></rect><rect x="1072" y="555" width="13" height="12" fill="#FBF8F2"></rect><path d="M1074 565 L1078 557 L1083 565 Z" fill="#3E8E4F"></path><circle cx="1098" cy="560" r="4" fill="#C2412A"></circle><circle cx="1105" cy="561" r="3.5" fill="#E89A5B"></circle></g>
 <g><path d="M936 568 L948 528 L960 568" stroke="#8C6A50" stroke-width="2" fill="none"></path>
@@ -282,11 +282,11 @@ a{color:#151515}a:hover{color:#23305E}
 
 <ellipse cx="1260" cy="704" rx="162" ry="44" fill="#D9826A"></ellipse>
 <ellipse cx="1260" cy="704" rx="124" ry="27" fill="#A9BE8F"></ellipse>
-<ellipse cx="1260" cy="704" rx="133" ry="31" fill="none" stroke="#F2F3F0" stroke-width="1.2" opacity=".75"></ellipse>
-<ellipse cx="1260" cy="704" rx="143" ry="35" fill="none" stroke="#F2F3F0" stroke-width="1.2" opacity=".75"></ellipse>
-<ellipse cx="1260" cy="704" rx="153" ry="40" fill="none" stroke="#F2F3F0" stroke-width="1.2" opacity=".75"></ellipse>
+<ellipse cx="1260" cy="704" rx="133" ry="31" fill="none" stroke="#F3F0E8" stroke-width="1.2" opacity=".75"></ellipse>
+<ellipse cx="1260" cy="704" rx="143" ry="35" fill="none" stroke="#F3F0E8" stroke-width="1.2" opacity=".75"></ellipse>
+<ellipse cx="1260" cy="704" rx="153" ry="40" fill="none" stroke="#F3F0E8" stroke-width="1.2" opacity=".75"></ellipse>
 <g><rect x="1150" y="632" width="60" height="6" fill="#B5AFA4"></rect><rect x="1156" y="624" width="48" height="6" fill="#C9C3B8"></rect><rect x="1162" y="616" width="36" height="6" fill="#D9D2C4"></rect></g>
-<g class="bob"><rect x="1384" y="674" width="15" height="27" rx="7.5" fill="#FBF8F2"></rect><circle cx="1391.5" cy="666" r="7.5" fill="#E8C3A2"></circle><rect x="1386" y="682" width="11" height="7" fill="#23305E"></rect></g>
+<g class="bob"><rect x="1384" y="674" width="15" height="27" rx="7.5" fill="#FBF8F2"></rect><circle cx="1391.5" cy="666" r="7.5" fill="#E8C3A2"></circle><rect x="1386" y="682" width="11" height="7" fill="#7A1E2C"></rect></g>
 
 <g><rect x="938" y="570" width="5" height="42" fill="#6B5446"></rect><circle cx="940" cy="552" r="25" fill="#8CA673"></circle><path d="M940 527 A25 25 0 0 1 965 552 A25 25 0 0 1 940 577 Z" fill="#76905F"></path></g>
 <g><path d="M1166 530 L1180 488 L1194 530 Z" fill="#6E8C63"></path><path d="M1180 488 L1194 530 L1180 530 Z" fill="#5C7752"></path><rect x="1178" y="530" width="4" height="10" fill="#6B5446"></rect></g>
@@ -300,30 +300,30 @@ a{color:#151515}a:hover{color:#23305E}
 </sc-for>
 
 <sc-if value="{{ hasSel }}" hint-placeholder-val="{{ false }}">
-<aside class="panel" aria-live="polite" style="position: absolute; right: 16px; top: 16px; bottom: 16px; width: 420px; background: #FFFFFF; border-radius: 6px; overflow: auto; display: flex; flex-direction: column; z-index: 3; box-shadow: 0 1px 0 rgba(21,21,21,.06), 0 24px 60px rgba(43,37,34,.22)">
-<div style="position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 10px 8px 16px; background: #FFFFFF; border-bottom: 1px solid #DFE2DE">
-<span style="font-size: 13px; color: #5E625F; font-variant-numeric: tabular-nums">{{ cur.num }} of {{ total }}</span>
+<aside class="panel" aria-live="polite" style="position: absolute; right: 16px; top: 16px; bottom: 16px; width: 420px; background: #FBF9F4; border-radius: 6px; overflow: auto; display: flex; flex-direction: column; z-index: 3; box-shadow: 0 1px 0 rgba(21,21,21,.06), 0 24px 60px rgba(43,37,34,.22)">
+<div style="position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 10px 8px 16px; background: #FBF9F4; border-bottom: 1px solid #E2DDD1">
+<span style="font-size: 13px; color: #6B675E; font-variant-numeric: tabular-nums">{{ cur.num }} of {{ total }}</span>
 <span style="display: flex; gap: 6px">
-<button type="button" onClick="{{ prev }}" aria-label="Previous stop" style="min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid #D3D6D1; background: #FFFFFF; color: #151515; font: inherit; font-size: 14px; cursor: pointer">← Prev</button>
+<button type="button" onClick="{{ prev }}" aria-label="Previous stop" style="min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid #D8D2C4; background: #FFFFFF; color: #151515; font: inherit; font-size: 14px; cursor: pointer">← Prev</button>
 <button type="button" onClick="{{ close }}" style="min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid #151515; background: #FFFFFF; color: #151515; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Close ✕</button>
 </span>
 </div>
-<div style="position: relative; aspect-ratio: 4 / 3; flex-shrink: 0; background: #DFE2DE; overflow: hidden">
+<div style="position: relative; aspect-ratio: 4 / 3; flex-shrink: 0; background: #E2DDD1; overflow: hidden">
 <sc-if value="{{ cur.hasImg }}" hint-placeholder-val="{{ true }}"><img src="{{ cur.img }}" alt="{{ cur.imgAlt }}" style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: {{ cur.imgPos }}"></sc-if>
-<sc-if value="{{ cur.noImg }}" hint-placeholder-val="{{ false }}"><div style="height: 100%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #5E625F">[Photo · {{ cur.label }}]</div></sc-if>
+<sc-if value="{{ cur.noImg }}" hint-placeholder-val="{{ false }}"><div style="height: 100%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #6B675E">[Photo · {{ cur.label }}]</div></sc-if>
 </div>
 <div style="padding: 22px 26px 26px; display: flex; flex-direction: column; gap: 14px; flex: 1">
-<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: #5E625F"><span>{{ cur.kicker }}</span></div>
-<h2 style="margin: 0; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.05; letter-spacing: -0.03em">{{ cur.title }}</h2>
-<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #2F3236">{{ cur.body }}</p>
-<sc-if value="{{ cur.hasBody2 }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #2F3236">{{ cur.body2 }}</p></sc-if>
-<sc-if value="{{ cur.hasBody3 }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #2F3236">{{ cur.body3 }}</p></sc-if>
+<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: #6B675E"><span>{{ cur.kicker }}</span></div>
+<h2 style="margin: 0; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.05; letter-spacing: -0.03em">{{ cur.title }}</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A3832">{{ cur.body }}</p>
+<sc-if value="{{ cur.hasBody2 }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A3832">{{ cur.body2 }}</p></sc-if>
+<sc-if value="{{ cur.hasBody3 }}" hint-placeholder-val="{{ false }}"><p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3A3832">{{ cur.body3 }}</p></sc-if>
 <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; border-top: 1px solid #151515; padding-top: 14px; margin-top: 2px">
-<sc-for list="{{ cur.chips }}" as="c" hint-placeholder-count="3"><div><div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 30px; line-height: 1">{{ c.v }}</div><div style="font-size: 12px; line-height: 1.35; color: #5E625F; margin-top: 6px">{{ c.l }}</div></div></sc-for>
+<sc-for list="{{ cur.chips }}" as="c" hint-placeholder-count="3"><div><div style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 30px; line-height: 1">{{ c.v }}</div><div style="font-size: 12px; line-height: 1.35; color: #6B675E; margin-top: 6px">{{ c.l }}</div></div></sc-for>
 </div>
 <div style="display: flex; flex-wrap: nowrap; gap: 16px; align-items: flex-end; justify-content: space-between; margin-top: auto; padding-top: 10px">
-<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 8px"><a href="{{ cur.href }}" class="ul-on" style="font-size: 15px; font-weight: 500">{{ cur.cta }} →</a><sc-if value="{{ cur.hasCta2 }}" hint-placeholder-val="{{ false }}"><a href="{{ cur.href2 }}" class="ul-on" style="font-size: 15px; font-weight: 500; color: #23305E">{{ cur.cta2 }} {{ cur.arrow2 }}</a></sc-if></span>
-<button type="button" onClick="{{ next }}" style="flex: 0 0 auto; margin-left: auto; white-space: nowrap; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #151515; background: #151515; color: #FFFFFF; font: inherit; font-size: 14px; font-weight: 500; cursor: pointer">Next stop →</button>
+<span style="flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 8px"><a href="{{ cur.href }}" class="ul-on" style="font-size: 15px; font-weight: 500">{{ cur.cta }} →</a><sc-if value="{{ cur.hasCta2 }}" hint-placeholder-val="{{ false }}"><a href="{{ cur.href2 }}" class="ul-on" style="font-size: 15px; font-weight: 500; color: #7A1E2C">{{ cur.cta2 }} {{ cur.arrow2 }}</a></sc-if></span>
+<button type="button" onClick="{{ next }}" style="flex: 0 0 auto; margin-left: auto; white-space: nowrap; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #151515; background: #151515; color: #FBF9F4; font: inherit; font-size: 14px; font-weight: 500; cursor: pointer">Next stop →</button>
 </div>
 </div>
 </aside>
@@ -332,16 +332,16 @@ a{color:#151515}a:hover{color:#23305E}
 </div>
 
 <div class="fade" style="animation-delay: .9s; display: flex; flex-direction: column; gap: 18px">
-<span style="font-size: 13px; color: #5E625F">Since 2020</span>
+<span style="font-size: 13px; color: #6B675E">Since 2020</span>
 <div class="tl" style="position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0 20px">
 <div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 7px; height: 1px; background: #151515"></div>
 <sc-for list="{{ years }}" as="y" hint-placeholder-count="6">
 <div style="position: relative; display: flex; flex-direction: column; gap: 10px; min-width: 0">
-<span aria-hidden="true" style="width: 15px; height: 15px; border-radius: 50%; background: {{ y.dot }}; box-shadow: 0 0 0 4px #F2F3F0"></span>
+<span aria-hidden="true" style="width: 15px; height: 15px; border-radius: 50%; background: {{ y.dot }}; box-shadow: 0 0 0 4px #F3F0E8"></span>
 <span style="font-weight: 800; font-size: 30px; line-height: 1; letter-spacing: -0.04em; color: {{ y.color }}">{{ y.y }}</span>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <sc-for list="{{ y.items }}" as="it" hint-placeholder-count="2">
-<sc-if value="{{ it.link }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ it.go }}" class="ul" style="align-self: flex-start; text-align: left; background: none; border: 0; padding: 0; font: inherit; font-size: 14px; line-height: 1.35; color: #2F3236; cursor: pointer">{{ it.t }}</button></sc-if><sc-if value="{{ it.plain }}" hint-placeholder-val="{{ false }}"><span style="font-size: 14px; line-height: 1.35; color: #2F3236">{{ it.t }}</span></sc-if>
+<sc-if value="{{ it.link }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ it.go }}" class="ul" style="align-self: flex-start; text-align: left; background: none; border: 0; padding: 0; font: inherit; font-size: 14px; line-height: 1.35; color: #3A3832; cursor: pointer">{{ it.t }}</button></sc-if><sc-if value="{{ it.plain }}" hint-placeholder-val="{{ false }}"><span style="font-size: 14px; line-height: 1.35; color: #3A3832">{{ it.t }}</span></sc-if>
 </sc-for>
 </div>
 </div>
@@ -351,7 +351,7 @@ a{color:#151515}a:hover{color:#23305E}
 
 <sc-if value="{{ allSeen }}" hint-placeholder-val="{{ false }}">
 <div class="fade" style="border-top: 1px solid #151515; border-bottom: 1px solid #151515; padding: 22px 0; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
-<span style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15; letter-spacing: -0.03em">You've seen every stop. Want to talk?</span>
+<span style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 28px; line-height: 1.15; letter-spacing: -0.03em">You've seen every stop. Want to talk?</span>
 <a href="https://www.linkedin.com/in/angela-kalopisis/" target="_blank" rel="noopener" class="ul-on" style="font-size: 16px; font-weight: 500">Connect on LinkedIn ↗</a>
 </div>
 </sc-if>
@@ -360,27 +360,27 @@ a{color:#151515}a:hover{color:#23305E}
 
 <section id="list" style="padding: 48px clamp(20px, 4vw, 56px) 112px">
 <div style="max-width: 1328px; margin: 0 auto; display: flex; flex-direction: column">
-<div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #151515; padding-bottom: 14px; font-size: 14px; color: #5E625F"><span>All work</span><span>2020 to 2026</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #151515; padding-bottom: 14px; font-size: 14px; color: #6B675E"><span>All work</span><span>2020 to 2026</span></div>
 <sc-for list="{{ stops }}" as="s" hint-placeholder-count="9">
-<a class="row" href="{{ s.href }}" style="text-decoration: none; display: grid; grid-template-columns: 56px minmax(0, 1fr) auto 24px; gap: 16px; align-items: baseline; text-align: left; background: none; border: 0; border-bottom: 1px solid #D3D6D1; padding: 22px 0; font: inherit; color: #151515; cursor: pointer; width: 100%">
-<span style="font-size: 14px; color: #23305E; font-variant-numeric: tabular-nums">{{ s.num }}</span>
-<span style="display: flex; flex-wrap: wrap; gap: 4px 24px; align-items: baseline"><span class="row-title" style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.1; letter-spacing: -0.03em; transition: color .2s">{{ s.title }}</span><span style="font-size: 15px; color: #5E625F">{{ s.oneLine }}</span></span>
-<span style="font-size: 14px; color: #5E625F; white-space: nowrap; font-variant-numeric: tabular-nums">{{ s.yr }}</span>
+<a class="row" href="{{ s.href }}" style="text-decoration: none; display: grid; grid-template-columns: 56px minmax(0, 1fr) auto 24px; gap: 16px; align-items: baseline; text-align: left; background: none; border: 0; border-bottom: 1px solid #D8D2C4; padding: 22px 0; font: inherit; color: #151515; cursor: pointer; width: 100%">
+<span style="font-size: 14px; color: #7A1E2C; font-variant-numeric: tabular-nums">{{ s.num }}</span>
+<span style="display: flex; flex-wrap: wrap; gap: 4px 24px; align-items: baseline"><span class="row-title" style="font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.1; letter-spacing: -0.03em; transition: color .2s">{{ s.title }}</span><span style="font-size: 15px; color: #6B675E">{{ s.oneLine }}</span></span>
+<span style="font-size: 14px; color: #6B675E; white-space: nowrap; font-variant-numeric: tabular-nums">{{ s.yr }}</span>
 <span class="row-arrow" aria-hidden="true">→</span>
 </a>
 </sc-for>
 </div>
 </section>
 
-<footer id="contact" style="background: #151515; color: #F2F3F0; padding: 96px clamp(20px, 4vw, 56px) 40px">
+<footer id="contact" style="background: #151515; color: #F3F0E8; padding: 96px clamp(20px, 4vw, 56px) 40px">
 <div style="max-width: 1328px; margin: 0 auto; display: flex; flex-direction: column; gap: 72px">
 <div style="display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-end; justify-content: space-between">
-<p style="margin: 0; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: clamp(44px, 5.6vw, 88px); line-height: 0.95; letter-spacing: -0.045em">Want to talk?<br>Say hello.</p>
-<a href="https://www.linkedin.com/in/angela-kalopisis/" target="_blank" rel="noopener" class="ul-on" style="color: #F2F3F0; font-size: 18px">Connect on LinkedIn ↗</a>
+<p style="margin: 0; font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: clamp(44px, 5.6vw, 88px); line-height: 0.95; letter-spacing: -0.045em">Want to talk?<br>Say hello.</p>
+<a href="https://www.linkedin.com/in/angela-kalopisis/" target="_blank" rel="noopener" class="ul-on" style="color: #F3F0E8; font-size: 18px">Connect on LinkedIn ↗</a>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 16px 28px; justify-content: space-between; font-size: 13px; color: #A4A8A6; border-top: 1px solid #2F3236; padding-top: 20px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px 28px; justify-content: space-between; font-size: 13px; color: #A8A396; border-top: 1px solid #3A3832; padding-top: 20px">
 <span>Angela Kalopisis · London, Ontario</span>
-<span style="display: flex; flex-wrap: wrap; gap: 24px"><span>akalopis@outlook.com</span><a href="https://myvolunteerpathway.ca" target="_blank" rel="noopener" class="ul" style="color: #A4A8A6">My Volunteer Pathway</a></span>
+<span style="display: flex; flex-wrap: wrap; gap: 24px"><span>akalopis@outlook.com</span><a href="https://myvolunteerpathway.ca" target="_blank" rel="noopener" class="ul" style="color: #A8A396">My Volunteer Pathway</a></span>
 </div>
 </div>
 </footer>
@@ -529,7 +529,7 @@ class Component extends DCLogic {
       count: count,
       total: STOPS.length,
       allSeen: count === STOPS.length,
-      dots: STOPS.map((s) => ({ bg: seen[s.id] ? '#23305E' : '#D3D6D1' })),
+      dots: STOPS.map((s) => ({ bg: seen[s.id] ? '#7A1E2C' : '#D8D2C4' })),
       stops: STOPS.map((s) => Object.assign({}, s, {
         cls: 'pin' + (s.main ? ' pin-main' : '') + (seen[s.id] ? ' seen' : ' ring') + (st.sel === s.id ? ' active' : ''),
         main: !!s.main,
@@ -548,7 +548,7 @@ class Component extends DCLogic {
       goContact: () => this.goTo('contact'),
       pickWings: () => this.pick('wings'),
       pickMvp: () => this.pick('mvp'),
-      years: YEARS.map((y, i) => ({ y: y.y, color: i === YEARS.length - 1 ? '#23305E' : '#151515', dot: i === YEARS.length - 1 ? '#23305E' : '#151515', items: y.items.map((it) => ({ t: it.t, link: !!it.id, plain: !it.id, go: () => { if (it.id) { this.pick(it.id); this.scrollToMap(); } } })) })),
+      years: YEARS.map((y, i) => ({ y: y.y, color: i === YEARS.length - 1 ? '#7A1E2C' : '#151515', dot: i === YEARS.length - 1 ? '#7A1E2C' : '#151515', items: y.items.map((it) => ({ t: it.t, link: !!it.id, plain: !it.id, go: () => { if (it.id) { this.pick(it.id); this.scrollToMap(); } } })) })),
       pickLimitless: () => { this.pick('limitless'); var el = document.getElementById('explore'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
     };
   }
